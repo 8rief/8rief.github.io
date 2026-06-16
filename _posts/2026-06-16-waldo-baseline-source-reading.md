@@ -1,89 +1,76 @@
 ---
 layout: post
-title: "读 Waldo 源码学到的第一件事：baseline 不是一行复杂度公式"
+title: "Waldo 源码笔记：实验 baseline 的协议边界如何确定"
 date: 2026-06-16 10:00:00 +0800
 categories: secure-query
 tags: [waldo, fss, benchmark, source-reading]
 ---
 
-这篇只讨论一个问题：**为什么做安全查询系统时，不能把 baseline 简化成论文里的一行复杂度公式。**
+安全查询系统的实验比较中，baseline 首先是一个协议对象，而不是一行复杂度公式。通信边界、状态组织、查询形状和序列化边界如果没有对齐，最终数字很容易失去解释力。Waldo 是一个典型例子：论文和仓库说明它面向隐私保护时间序列数据库，使用 Function Secret Sharing 支持查询；仓库 README 同时明确标注该实现是 academic proof-of-concept，不是生产系统。这个定位决定了读源码时既要尊重其协议语义，也要审慎处理工程外壳。
 
-我最近读 Waldo 的源码和 README，最直观的感受是：一个认真 baseline 不是“通信量多少、复杂度多少”这么简单，而是一个有完整系统语义的实现。Waldo 的 README 说它是一个 private time-series database from Function Secret Sharing，同时也明确提醒这是 academic proof-of-concept prototype，不适合生产使用。这两个信息放在一起看很重要：它既是值得认真参考的系统 baseline，又不能被当成工程完备的生产组件。
+## 背景：baseline 为什么不能只看公式
 
-## baseline 的语义比数字更重要
-
-Waldo 不是一个孤立的 FSS key generator。它把时间序列聚合组织成树结构，然后用 FSS/DCF 风格的查询去选择树节点。也就是说，读 Waldo 时至少要同时理解三层东西：
+Waldo 的抽象目标不是“生成一份 FSS key”这么单薄，而是把时间序列数据组织成可查询的聚合结构，再通过 FSS/DCF 类查询隐藏访问模式。实验比较时至少有三层边界需要拆开：
 
 ```text
-时间序列区间查询
-        ↓
-聚合树 / cover nodes
-        ↓
-FSS/DCF 查询与服务器响应
+区间查询语义
+  -> 聚合树或过滤结构
+  -> FSS/DCF key、server eval、response reconstruction
 ```
 
-如果只看 FSS key size，很容易漏掉系统层面的边界。例如：
+如果只记录论文中的渐近复杂度，会遗漏几个直接影响实验数字的问题：
 
-- 查询是不是固定形状？
-- 一次查询覆盖多少树节点？
-- 每台服务器返回的是节点值还是聚合值？
-- append 是否走同一套路径？
-- 代码里的网络序列化算不算协议开销？
-- setup 阶段和 online 阶段如何分界？
+- query 发送的是单个点函数 key，还是左右边界的区间/DCF key；
+- 每台服务器返回的是一个聚合值，还是每层一组候选节点值；
+- append 是单轮写入，还是先读路径再写回路径；
+- 测量包含 gRPC/protobuf，还是只统计协议 payload；
+- baseline 的核心协议是否被保留，还是被测量 wrapper 改变了语义。
 
-这些问题不解决，实验结果就很容易失真。
+这些边界不固定，通信量和时延就不能直接解释。
 
-## 读源码时我最关注的不是函数名
+## 源码中的 WaldoTree 查询边界
 
-读 Waldo 这种系统时，我觉得最重要的不是逐个解释函数，而是抓住它的协议边界。
+在 Waldo 源码中，`AggTreeIndexClient` 同时承担聚合树 key 生成和 append 路径更新相关的 client 逻辑。几个函数能清楚看出协议形状：
 
-我会先问：
+- `secure-indices/core/AggTree.cpp` 中的 `gen_agg_tree_keys` 为左右边界分别生成 DCF key；
+- `serialize_keys` 把 LT 和 GT 两类 key 拼接后发给服务器；
+- `client/core/client.cpp` 中的 `AggTreeQuery` 对三台服务器分别构造 pairwise key；
+- server response 不是单个值，而是按深度返回 `retShares` 和 `retShares_r`，client 再逐层重构。
 
-```text
-client 在线发送什么？
-server 根据什么状态计算？
-server 返回什么？
-client 如何恢复答案？
-append 是否真的改变了 server state？
-```
+因此，WaldoTree 的查询通信和树深度相关是协议形状决定的，而不是某个实现常数导致的偶然现象。源码中的三服务器 pairwise key 分发逻辑也说明：比较 Waldo 时不能把它退化成两服务器 DPF 查询，否则模型已经变了。
 
-这比一开始钻进某个 C++ 类更有效。因为安全查询系统的性能往往不是某个函数决定的，而是由一整条路径决定的：key generation、query packing、server eval、response reconstruction、network framing、state update。
+## 源码中的 append 边界
 
-## baseline 改写时最容易犯的错
+append 更容易被误读。`client/core/client.cpp` 的 `AggTreeAppend` 分成两个阶段：
 
-如果为了测量方便改写 baseline，有两个相反的风险。
+1. client 向三台服务器发送 `SendATAppend1`，取回 append path 上的 parent shares；
+2. client 重构 parent path，调用 `propagateNewVal` 计算新聚合值，再拆分成 shares；
+3. client 通过 `SendATAppend2` 把新路径 shares 发回服务器。
 
-第一个风险是把 baseline 改得不像 baseline。比如把原方案里必须做的工作删掉，或者改变服务器返回语义。这样测出来再快也没意义。
+`AggTreeIndexServer::getAppendPath` 和 `finishAppend` 也对应这个流程：先定位下一次 append 的父路径，再在第二阶段完成写入。也就是说，Max/聚合树类 append 的通信与路径长度有关；如果某个实验把 append 简化成一次单值写入，就已经不是同一个 baseline 语义。
 
-第二个风险是把工程实现的额外开销误当成协议本身。比如一个方案用 protobuf/gRPC，另一个方案用 raw TCP，如果直接比较端到端字节数，就可能比较的是框架开销，而不是协议开销。
+## 实测数字如何解释
 
-所以我现在更倾向于把问题拆开：
+在统一 raw-TCP payload 口径下，depth 22 的 WaldoTree 结果显示：
 
-```text
-协议 payload 是多少？
-raw TCP frame 后是多少？
-完整系统实现端到端是多少？
-```
+| comparison | phase | mean total bytes | mean latency |
+|---|---:|---:|---:|
+| Waldo Sum128 | query | 10.778 KiB | 1248.93 ms |
+| Waldo Sum128 | append | 0.170 KiB | 80.83 ms |
+| Waldo Max64 | query | 10.263 KiB | 1275.72 ms |
+| Waldo Max64 | append | 1.676 KiB | 161.65 ms |
 
-这三个都可以有价值，但不能混着讲。
+这些数字的重点不是“Waldo 慢”这个简单结论，而是协议边界解释：Sum append 可以是一轮较小数据更新；Max append 需要路径相关的两阶段更新；query 需要按树深度携带和返回相关材料。实验比较只有在这些边界保持一致时才有意义。
 
-## 这件事对我的启发
+## 结论
 
-Waldo 给我的最大启发不是“某个数值是多少”，而是：**baseline 是一个系统对象，不是一个公式对象。**
+- baseline 是协议实现，不是复杂度公式。
+- WaldoTree query 的 key 和 response 结构由左右边界 DCF 与树深度共同决定。
+- WaldoTree append 对聚合路径敏感，不能与单 slot append 混为一谈。
+- 公平比较应先固定三件事：协议语义、通信统计边界、online/offline 分界。
 
-以后读安全查询论文或代码时，我会优先画出这张表：
+## 参考
 
-| 问题 | 要确认的内容 |
-|---|---|
-| 查询输入 | client 在线到底发什么 |
-| 服务端状态 | server 存的是明文、share、hint 还是树节点 |
-| 返回值 | response 是节点列表、聚合 share 还是最终 share |
-| 动态更新 | append/update 是否真正持久化 |
-| 离线边界 | setup、preprocessing、online 是否分清 |
-| 通信口径 | payload、framing、序列化是否分列 |
-
-这张表比单独记住某个复杂度更有用。
-
-## 参考源码
-
-- Waldo: <https://github.com/ucbrise/waldo>
+- Waldo paper: <https://eprint.iacr.org/2021/1661>
+- Waldo GitHub repository: <https://github.com/ucbrise/waldo>
+- Waldo local source anchors checked: `secure-indices/core/AggTree.{h,cpp}`, `client/core/client.cpp`

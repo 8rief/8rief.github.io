@@ -1,105 +1,94 @@
 ---
 layout: post
-title: "PCG 失败复盘（三）：三阶 selector 难点不是多乘一次，而是 continuation wire"
+title: "三阶 selector 笔记：continuation wire 为什么是核心难点"
 date: 2026-06-16 10:40:00 +0800
 categories: secure-query
 tags: [pcg, aby2, tensor, failed-attempt]
 ---
 
-这篇只讨论一个问题：**三阶 selector 的难点不是把三个 bit 乘起来，而是中间乘积能不能继续作为 wire 使用。**
+三阶 selector 的难点不是“把三个 bit 多乘一次”，而是中间乘积能否继续作为 wire 参与后续 gate。若第一层乘法只给出最终 additive share，它可以用于本次重构，却不一定能作为第二层乘法的输入。
 
-在三维 selector 里，一个自然目标是：
+## 背景：三阶 selector 的自然分解
 
-```text
-rho_x * rho_y * rho_z
-```
+三维 selector 中经常出现如下项：
 
-直觉上可以分两步：
+\[
+\rho_x[i]\wedge \rho_y[j]\wedge \rho_z[k].
+\]
 
-```text
-rho_xy  = rho_x * rho_y
-rho_xyz = rho_xy * rho_z
-```
+最自然的分解是两层乘法：
 
-看起来只是多做一次乘法。但真正进入 secret sharing / PCG 语境后，这个想法会遇到一个关键问题：第一层输出是什么形式？
+\[
+\rho_{xy}[i,j]=\rho_x[i]\wedge\rho_y[j],
+\]
 
-## final share 和 continuation wire 不一样
+\[
+\rho_{xyz}[i,j,k]=\rho_{xy}[i,j]\wedge\rho_z[k].
+\]
 
-如果第一层乘法只输出一个最终 additive share，那么它可以用于本次响应重构，但未必能继续参与下一层乘法。
+从明文代数看，这只是多乘一次。但在 secret sharing、ABY2.0 或 PCG 语境下，第一层输出的“形式”比数值更重要。
 
-继续乘法通常要求中间值仍然处在某种 wire/share 表示里。换句话说，`rho_xy` 不能只是“最后答案的一部分”，它必须还能被 server 当作下一层 gate 的输入。
+## final share 和 continuation wire 的区别
 
-这就是我理解的 continuation wire 问题。
+若一个乘法 gate 只输出 additive response share，那么三方相加可以得到乘积。这适合最终响应：
 
-```text
-rho_x, rho_y  --mul gate-->  rho_xy as wire
-rho_xy, rho_z --mul gate-->  rho_xyz as wire/share
-```
+\[
+z_0+z_1+z_2=xy.
+\]
 
-如果第一层 gate 没有输出可继续使用的 wire，第二层 gate 就没有正确输入。
+但下一层乘法通常要求输入仍是某种可继续计算的 share/wire 表示，例如每个参与方持有约定形式的相邻 share 或 masked wire。此时只知道一个 additive share 不够，因为 gate 需要的不只是“最终能重构的值”，还包括后续本地乘法公式所需的 share 结构。
 
-## ABY2.0 给我的启发
-
-ABY2.0/MOTION2NX 这类工作让我意识到，乘法协议不只是“算出乘积 share”。它还关心 wire representation、masked value、setup correlation 和 online reconstruction 的关系。
-
-对于固定电路，如果 setup 阶段已经知道后续要乘哪些东西，就可以把相关材料围绕电路结构组织，而不是把每个乘法都当成孤立事件。
-
-但这也意味着：
+因此，三阶 selector 需要的是：
 
 ```text
-普通二阶 PCG + 临时拼接
+rho_x, rho_y  ->  mul gate  ->  rho_xy as continuation wire
+rho_xy, rho_z ->  mul gate  ->  rho_xyz as output wire/share
 ```
 
-不一定足够。你需要的是：
+这就是 continuation wire 问题。
 
-```text
-circuit-dependent preprocessing
-或 linked gate-correlation PCG
-```
+## ABY2.0/BEAVY 带来的启发
 
-## 为什么直接三阶 tensor 很重
+ABY2.0 的核心改进之一是围绕 online 阶段效率重新组织 sharing、masked value 和 multiplication protocol。MOTION2NX 的 README 也说明它实现了 Arithmetic/Boolean variants of ABY2.0 的 secret-sharing-based protocols，并提供多种协议转换。这个系统视角提示了一个边界：乘法预处理不能只看单个乘积，还要看乘积是否要继续进入后续电路。
 
-另一个替代路线是直接生成：
+换到三阶 selector 上，PCG 需要 seed 化的不是一个孤立的 \(xy\)，而是固定电路中的 gate material：第一层 gate 的输出必须能被第二层 gate 消费。若现有 PCG 只提供普通 OLE 或逐点乘法相关性，而没有 linked continuation-wire API，就还不是完整解决方案。
 
-```text
-rho_x ⊗ rho_y ⊗ rho_z
-```
+## 在线通信计算中的一个典型错误
 
-这样可以绕过中间 wire 问题。但它会带来三阶 tensor 的存储和 key 数量问题。尤其是使用 sparse cross-term + SPFSS 这类方法时，二阶是 `t^2`，三阶就会变成 `t^3`，还要乘上多个 holder pattern、trace/Frobenius 分量和 component 组合。
+三维 selector 的正确 online masked input 应该是三个轴向量：
 
-所以直接三阶 tensor 是一个清晰但很重的 baseline。
+\[
+\Delta_x=e_x\oplus\delta_x,
+\quad
+\Delta_y=e_y\oplus\delta_y,
+\quad
+\Delta_z=e_z\oplus\delta_z.
+\]
 
-## 这次失败的核心原因
+服务器使用预处理/PCG 材料组合出三输入 selector share。错误做法是把中间 \(xy\) 平面 materialize 后让 client 发送 \(\Delta_{xy}\) 和 \(\Delta_z\)。如果三维 layout 平衡，边长为 \(m\)，两种请求规模分别是：
 
-我最初把问题想成：
+\[
+3m \text{ bits}
+\]
 
-```text
-有二阶 PCG，就能拼出三阶
-```
+和
 
-后来发现更准确的说法应该是：
+\[
+m^2+m \text{ bits}.
+\]
 
-```text
-有二阶 PCG，只能说明第一层乘法有希望；
-如果第二层要继续乘，第一层输出必须被组织成可继续使用的 wire，
-这需要 linked/circuit-dependent 的相关材料。
-```
+当 \(N=2^{22}\) 时，平衡三维边长约为 \(m=\lceil N^{1/3}\rceil=162\)。于是三轴发送约为 \(486\) bits，而平面发送约为 \(26406\) bits。后者把请求放大了约 \(54.3\times\)。这个计算说明：中间 wire 应该留在 server-side gate circuit 中，而不是作为在线请求显式发送。
 
-也就是说，三阶问题不是“乘法次数 +1”，而是“相关材料结构升级”。
+## 结论
 
-## 后续问题
+- 三阶 selector 的核心不是明文代数，而是 share/wire 形态能否延续。
+- 第一层乘法如果只输出 final additive share，就不能自动作为第二层乘法输入。
+- PCG 需要服务于固定电路中的 linked gate material，而不是孤立乘法。
+- 在线请求应发送三个轴向 masked inputs，不应发送二维中间平面。
 
-未来值得看的问题包括：
+## 参考
 
-1. 有没有现成 PCF/PCG 支持固定电路的 linked preprocessing？
-2. 能不能避免显式三阶 tensor，在扫描或评估过程中边展开边消费？
-3. 对 selector 这种特殊电路，是否存在比通用 circuit preprocessing 更轻的构造？
-4. 安全参数下，三阶直接 baseline 的 key size 到底是否完全不可接受，还是在某些小域/小 depth 场景可用？
-
-这些问题比“再写一个 demo”更重要。
-
-## 参考源码
-
-- MOTION2NX: <https://github.com/encryptogroup/MOTION2NX>
-- f2-ole-pcg: <https://github.com/mtrom/f2-ole-pcg>
-- Trace-F2-OLE-PCG: <https://github.com/zhli271828/Trace-F2-OLE-PCG>
+- ABY2.0: Improved Mixed-Protocol Secure Two-Party Computation: <https://www.usenix.org/conference/usenixsecurity21/presentation/patra>
+- ABY2.0 full version PDF: <https://encrypto.de/papers/PSSY21.pdf>
+- MOTION2NX repository: <https://github.com/encryptogroup/MOTION2NX>
+- `mtrom/f2-ole-pcg`: <https://github.com/mtrom/f2-ole-pcg>

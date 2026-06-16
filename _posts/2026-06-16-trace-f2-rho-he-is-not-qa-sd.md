@@ -1,99 +1,66 @@
 ---
 layout: post
-title: "PCG 失败复盘（二）：为什么 rho = H e 不能替代 QA-SD/trace 结构"
+title: "Trace-F2 PCG 笔记：rho = H e 原型为什么缺少安全依据"
 date: 2026-06-16 10:30:00 +0800
 categories: secure-query
 tags: [pcg, trace, qa-sd, failed-attempt]
 ---
 
-这篇只讨论一个问题：**一个看起来随机、测试也正确的 `rho = H e` 构造，为什么不能直接当成安全 PCG。**
+一个小规模测试正确、输出也看起来随机的 \(\rho=He\) 原型，不能直接当成安全 PCG。问题不在代数正确性，而在它没有接上论文证明所依赖的样本分布。
 
-在尝试 seed 化 selector material 时，我曾经考虑过一种非常直接的做法：令 `e` 是稀疏秘密，`H` 是由 label/counter 派生的公开矩阵，然后：
+## 背景：一个很诱人的简化
 
-```text
-rho_tau = H_tau e
-```
+为了 seed 化 selector mask，可以考虑如下构造：令 \(e\) 是稀疏秘密，令 \(H_\tau\) 是由 token 或 counter 派生的公开矩阵，然后定义：
 
-这个构造很诱人，因为它容易实现，也容易让不同 counter 产生不同输出。小规模测试里，它可以通过很多正确性检查。
+\[
+\rho_\tau=H_\tau e.
+\]
 
-但后来我认为这个方向不能作为安全结论。
+这个构造很容易实现，也容易做出许多通过正确性测试的输出。不同 counter 使用不同 \(H_\tau\)，表面上也能得到不同 mask。
 
-## 问题不在正确性，而在安全来源
+但这只是一个线性稀疏编码原型，不等于 Trace-F2 PCG 的安全构造。
 
-`rho = H e` 可以做出正确的代数关系，不代表它接上了论文里的安全假设。
+## Trace-F2 方向依赖的样本形状
 
-Trace-F2-OLE-PCG 相关工作里的核心样本形状更接近：
+Li 等关于任意有限域 PCG 的工作，以及 `Trace-F2-OLE-PCG` 原型，使用的安全基础更接近：
 
-```text
-x = a * s + e
-rho = Tr(x)
-```
+\[
+x = a s + e,
+\]
 
-这里 `s` 和 `e` 是稀疏秘密，`a` 是公开结构，安全性来自 QA-SD/Ring-LPN 类假设和 trace 变换。也就是说，安全证明依赖的是一个具体分布，而不是“公开矩阵乘稀疏向量看起来随机”这个直觉。
+再通过 trace 映射得到目标域上的相关性。这里 \(s\) 和 \(e\) 是稀疏秘密，\(a\) 是公开结构，安全性依赖 QA-SD/Ring-LPN 类假设和 trace 变换。也就是说，证明讨论的是一个具体分布，而不是“公开矩阵乘稀疏向量看起来随机”这个直觉。
 
-如果把它改成：
+如果把结构改成 \(\rho_\tau=H_\tau e\)，尤其还跨很多 counter 复用同一个 \(e\)，就不能直接继承原文安全性。
 
-```text
-rho_tau = H_tau e
-```
+## README 警告本身也是一个信号
 
-并且还让同一个 `e` 跨很多 counter 复用，那就不能直接套原文安全性。
+`Trace-F2-OLE-PCG` 的 README 给出两个重要边界：
 
-## 为什么小测试会误导
+1. 它是 OLE 和 authenticated multiplication triples 的 prototype implementation，面向研究用途；
+2. README 明确提示，早期 QA-SD 参数 \((c=3,t=27,q=4,n=16)\) 已被新攻击影响，并建议例如 \((c=5,t=27,q=4,n\le16)\) 等参数，其中推荐参数在作者机器上约慢 \(2.75\times\)。
 
-这类构造在小规模测试里可能表现不错：
+这说明安全性不能靠“测试能跑”判断。即使是在论文形状内，参数也需要随攻击进展重新评估；偏离论文形状后，更不能把正确性测试当作安全证据。
 
-- 输出看起来接近平衡；
+## 小测试为什么容易误导
+
+\(\rho=He\) 可以通过以下测试：
+
+- 输出长度正确；
 - 不同 counter 输出不同；
-- 单点统计看不出明显泄露；
-- selector reconstruction 正确。
+- selector 组合后的代数关系正确；
+- 单次查询结果与明文模拟一致。
 
-但这些测试只能说明“没有发现明显错误”，不能说明它满足 QA-SD/trace 的伪随机性。
+这些测试只能说明实现没有明显算错。它们不能证明 server view 下的不可区分性，也不能证明复用稀疏秘密时不存在跨 token 相关性泄露。密码实现中，正确性测试和安全性论证是两类证据。
 
-安全构造最危险的地方就在这里：
+## 结论
 
-```text
-正确性测试通过 ≠ 安全分布正确
-```
+- \(\rho=He\) 可以作为正确性原型，但不能作为安全 PCG 结论。
+- Trace-F2 路线的安全基础是 \(x=as+e\) 加 trace，而不是任意线性稀疏编码。
+- 复用同一个稀疏 \(e\) 跨 counter 会让安全论证更加困难。
+- 研究原型的 README 参数警告应被当作安全边界，而不是实现细节。
 
-## Trace-F2 路线真正有用的部分
+## 参考
 
-Trace-F2-OLE-PCG 仍然很有价值。它提醒我：
-
-1. 要回到 `a*s+e` 这样的证明结构；
-2. sparse cross terms 可以用 DPF/SPFSS 分享；
-3. F2 目标域可以通过 trace 处理；
-4. 参数安全性不是随便选小参数就行。
-
-尤其是它 README 里对 QA-SD 参数安全的提醒，很适合作为警示：能跑 demo 的参数不一定安全，旧参数甚至可能被新的攻击否定。
-
-## 这次失败的核心原因
-
-这个方向失败不是因为它完全没有用，而是因为它只能作为代数/接口原型，不能作为安全 PCG 实现。
-
-更准确地说：
-
-```text
-rho = H e
-```
-
-可以帮助验证 selector 公式和工程接口；但如果要写安全性，就必须回到：
-
-```text
-x = a*s + e
-rho = Tr(x)
-```
-
-以及与之配套的 sparse cross-term sharing。
-
-## 后续问题
-
-真正值得继续做的问题是：
-
-> 如何把 QA-SD/trace sample 产生的轴向 mask，和 selector 需要的 outer-product/tensor-product correlation 绑定起来？
-
-这不是简单替换一行 PRG，而是要重新定义 setup 输出、holder key、client key、counter/label 范围和安全参数。
-
-## 参考源码
-
-- Trace-F2-OLE-PCG: <https://github.com/zhli271828/Trace-F2-OLE-PCG>
+- Efficient Pseudorandom Correlation Generators for Any Finite Field: <https://eprint.iacr.org/2025/169>
+- `Trace-F2-OLE-PCG`: <https://github.com/zhli271828/Trace-F2-OLE-PCG>
+- Trace-F2 code availability note in the published version: <https://link.springer.com/content/pdf/10.1007/978-3-031-91092-0_6.pdf?pdf=inline+link>

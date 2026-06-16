@@ -4,11 +4,13 @@ title: About
 permalink: /about/
 ---
 
-我关注安全查询、隐私计算、密码学工程和研究代码复现。
+本博客关注安全查询、隐私计算、密码学工程和研究代码复现。
 
-这个博客主要记录：
+主要内容包括：
 
-- 阅读安全查询相关源码和论文后的理解；
-- 做实验和复现时踩过的抽象层面问题；
-- 失败构造为什么失败，以及它暴露了哪些未来问题；
-- 对后续研究方向的阶段性判断。
+- 安全查询相关源码和论文的阅读笔记；
+- PIR、DPF、FSS、PCG 等工具的概念边界；
+- 实验复现和工程实现中暴露的抽象层问题；
+- 失败构造的原因复盘与后续可探索问题。
+
+Writing notes on secure query systems, privacy-preserving computation, cryptographic engineering, and research-code reproduction. The site favors source-grounded technical notes and narrow retrospectives over broad summaries.

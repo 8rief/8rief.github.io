@@ -6,3 +6,9 @@ _site/
 vendor/
 .DS_Store
 *.log
+
+# Local working notes; never publish these to GitHub Pages.
+TASK_NOTE.md
+CODEX_TASK_NOTE.md
+**/TASK_NOTE.md
+**/CODEX_TASK_NOTE.md

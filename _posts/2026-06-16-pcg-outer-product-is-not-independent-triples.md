@@ -1,99 +1,85 @@
 ---
 layout: post
-title: "PCG 失败复盘（一）：outer product 不是很多个独立乘法三元组"
+title: "PCG 笔记：outer product 相关性为什么不能由独立 triples 代替"
 date: 2026-06-16 10:20:00 +0800
 categories: secure-query
 tags: [pcg, ole, outer-product, failed-attempt]
 ---
 
-这篇只讨论一个问题：**为什么“能生成很多二阶乘法相关性”不等于“能生成 selector 需要的 outer-product 相关性”。**
+二维 selector 需要的不是一组互相独立的乘法相关性，而是一张共享轴向 mask 的 outer-product 相关矩阵。这个共享结构正是普通独立 triples 无法直接覆盖的地方。
 
-我一开始看 F2 OLE PCG 时，很自然地想：既然 PCG 可以从短 seed 展开很多乘法相关随机性，那它是不是可以直接生成二维 selector 需要的材料？后来发现，这个想法太粗糙。
+## 背景：从 OLE PCG 到 selector material 的误判
 
-## selector 里的二维相关性长什么样
+OLE/PCG 相关工作关注如何让双方从短 seed 本地展开大量相关随机性。这个目标和 selector material 很接近，因此容易产生一个直觉：既然 PCG 可以生成许多乘法相关性，那么二维 selector 需要的材料也可以直接用很多独立乘法 triples 代替。
 
-二维 selector 里常见的目标不是一批互相独立的乘法：
+这个直觉的漏洞在于“很多乘法”和“结构化乘法矩阵”不是同一个对象。
 
-```text
-a_i AND b_i
-```
+## 定义：二维 selector 的目标是 outer product
 
-而是一张 outer-product 矩阵：
+设两个轴向 mask 为：
 
-```text
-R_xy[u, v] = rho_x[u] AND rho_y[v]
-```
+\[
+\rho_x \in \{0,1\}^{m},\qquad \rho_y \in \{0,1\}^{n}.
+\]
 
-关键区别在于，整张矩阵共享同一批轴向 mask：
+二维 selector 需要的二阶项是：
 
-```text
-rho_x[0], rho_x[1], ...
-rho_y[0], rho_y[1], ...
-```
+\[
+R_{xy}[u,v] = \rho_x[u] \wedge \rho_y[v].
+\]
 
-这意味着同一个 `rho_x[u]` 会出现在很多列，同一个 `rho_y[v]` 会出现在很多行。
+矩阵形式为：
 
-## 独立 triples 为什么不够
+\[
+R_{xy}=\rho_x \rho_y^\top.
+\]
 
-普通独立 triples 可以给你很多组：
+关键点是整张矩阵共享同一批轴向 mask。同一个 \(\rho_x[u]\) 会出现在第 \(u\) 行的所有列，同一个 \(\rho_y[v]\) 会出现在第 \(v\) 列的所有行。
 
-```text
-a_{u,v}, b_{u,v}, c_{u,v} = a_{u,v} AND b_{u,v}
-```
+## 为什么独立 triples 不够
 
-但这并不保证：
+独立 triples 通常给出很多互不相关的：
 
-```text
-a_{u,0} = a_{u,1} = ... = rho_x[u]
-b_{0,v} = b_{1,v} = ... = rho_y[v]
-```
+\[
+a_{u,v},\quad b_{u,v},\quad c_{u,v}=a_{u,v}\wedge b_{u,v}.
+\]
 
-也就是说，它缺少 repeated-axis 约束。
+但 outer product 要求的是：
 
-如果没有这个约束，矩阵里的每个格子确实有乘法关系，但它们不是同一个 selector 的 outer product。这样生成出来的东西可以通过局部测试，却无法对应到真正的二维 one-hot 选择结构。
+\[
+a_{u,0}=a_{u,1}=\cdots=\rho_x[u],
+\]
 
-## 为什么普通 F2 OLE PCG 不能直接替代
+\[
+b_{0,v}=b_{1,v}=\cdots=\rho_y[v].
+\]
 
-`f2-ole-pcg` 这类实现解决的是 binary field OLE PCG 问题。它的接口围绕 seed exchange 和 expansion，生成大量 F2 上的 OLE-style correlations。这当然很有价值。
+普通 triples 没有这个重复轴约束。若强行把每个格子当成独立乘法，正确性测试可能仍能通过某些局部断言，但无法保证 selector 的轴向一致性；若后续查询依赖轴 mask 与二阶材料之间的绑定关系，就会出现语义断裂。
 
-但对我的目标来说，还要额外问：
+## 更接近的对象：matrix-product correlation
 
-```text
-这些 correlations 的输入能否被组织成重复轴？
-能否直接表达 matrix-product / outer-product？
-能否把同一 rho_x[u] 绑定到一整行？
-能否把同一 rho_y[v] 绑定到一整列？
-```
+Ring-LPN PCG 论文明确讨论了 matrix product correlations。outer product 是矩阵乘法的特例：令 \(A\) 是 \(m\times 1\) 的列向量 \(\rho_x\)，令 \(B\) 是 \(1\times n\) 的行向量 \(\rho_y^\top\)，则 \(C=AB\) 正好是 \(\rho_x\rho_y^\top\)。
 
-如果接口没有暴露这种 linked matrix-product 能力，那它就不是我需要的 primitive。
+这说明方向上应寻找 matrix-product / outer-product correlation PCG，而不是把 selector material 拆成独立 triples。
 
-## 这次失败的核心原因
+## 开源实现检查带来的边界
 
-失败不在于 PCG 没用，而在于我一开始把 primitive 名字看得太粗。
+两个本地检查过的开源实现给出了不同边界：
 
-我真正需要的是：
+- `mtrom/f2-ole-pcg` 实现的是 binary-field OLE 的 programmable PCG，接口包含 `prepare`、`online`、`finalize`、`expand` 等阶段，目标是 OLE 风格相关性；它没有直接暴露“给定两个复用轴向 mask，生成整张 linked outer-product material”的 API。
+- `zhli271828/Trace-F2-OLE-PCG` 更贴近 \(\mathbb F_2\) 和 trace 方向，README 说明其目标包括 OLE 和 authenticated multiplication triples；但该实现仍是研究原型，且不是 selector outer-product 的 drop-in backend。
 
-```text
-linked outer-product PCG
-或 matrix-product correlation PCG
-```
+因此，失败点不是“PCG 没有用”，而是“选错了 PCG 目标相关性”。需要的是 linked outer-product / matrix-product correlation，而不是普通逐点乘法相关性。
 
-而不是普通的：
+## 结论
 
-```text
-many independent multiplication triples
-```
+- 二维 selector 的核心对象是 \(\rho_x\rho_y^\top\)，不是很多独立的 \(a_i b_i\)。
+- 轴向 mask 的复用关系是正确性和安全语义的一部分。
+- matrix-product correlation 是更合适的理论接口。
+- 现有 OLE PCG 实现可提供重要参考，但不能自动等价为 selector 所需的 linked outer-product PCG。
 
-这两者的抽象层级不同。
+## 参考
 
-## 后续问题
-
-这个失败反而提出了一个更清楚的问题：
-
-> 是否存在一个工程上可用的、支持 repeated-axis matrix-product correlation 的 PCG/PCF 接口？
-
-如果有，它会是二维 selector seed 化的关键工具。若没有，就要么自己设计适配层，要么换一种数据/selector 组织方式。
-
-## 参考源码
-
-- f2-ole-pcg: <https://github.com/mtrom/f2-ole-pcg>
+- Efficient Pseudorandom Correlation Generators from Ring-LPN: <https://eprint.iacr.org/2022/1035>
+- `mtrom/f2-ole-pcg`: <https://github.com/mtrom/f2-ole-pcg>
+- `zhli271828/Trace-F2-OLE-PCG`: <https://github.com/zhli271828/Trace-F2-OLE-PCG>
