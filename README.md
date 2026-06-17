@@ -1,6 +1,6 @@
 # 8rief Notes
 
-个人技术笔记站，记录安全查询、隐私计算和相关开源系统的源码阅读与构造复盘。文章以单个问题为单位，尽量从背景、定义、分析到结论逐步展开。
+个人技术笔记站，记录安全查询、隐私计算和相关开源系统的源码阅读与构造复盘。
 
 A personal technical notebook for secure query systems, privacy-preserving computation, and source-code-oriented retrospectives. Each post focuses on one concrete question and follows a background-definition-analysis-takeaway structure when applicable.
 
