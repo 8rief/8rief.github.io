@@ -11,21 +11,6 @@ A personal technical notebook for secure query systems, privacy-preserving compu
 - 构造尝试失败原因与边界条件复盘 / Retrospectives on failed constructions and boundary conditions
 - 可公开的实验现象、计算结论和后续问题 / Publicly shareable measurements, calculations, and open questions
 
-## 写作方式 / Style
-
-- 一篇文章只讨论一个具体问题。
-- 技术细节尽量对照论文、公开源码和可复查的实测或计算结果。
-- 不发布未公开方案的完整协议细节、私有 raw data、账号密钥或本地路径。
-
-Each post is scoped to one question. Technical claims should be grounded in papers, public code, or reproducible measurements/calculations. Unpublished protocol details, private raw data, credentials, and local paths are excluded.
-
-## 本地编辑 / Local editing
-
-正式文章放在 `_posts/`：
-
-```text
-_posts/YYYY-MM-DD-short-title.md
-```
 
 常用命令：
 
