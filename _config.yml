@@ -1,8 +1,14 @@
 title: 8rief Notes
-description: 安全查询、隐私计算与研究工程笔记 / Notes on secure queries, privacy-preserving computation, and research engineering
+description: 项目展示、问题探究与计算机技术教学笔记 / Project showcases, problem explorations, and computer science teaching notes
 theme: minima
 author:
   name: 8rief
 lang: zh-CN
 timezone: Asia/Shanghai
 show_excerpts: true
+header_pages:
+  - project-showcase.md
+  - problem-exploration.md
+  - computer-science-teaching.md
+  - posts.md
+  - about.md

@@ -3,6 +3,8 @@ layout: post
 title: "PCG 笔记：outer product 相关性为什么不能由独立 triples 代替"
 date: 2026-06-16 10:20:00 +0800
 categories: secure-query
+column: problem-exploration
+column_title: "问题探究"
 tags: [pcg, ole, outer-product, failed-attempt]
 ---
 

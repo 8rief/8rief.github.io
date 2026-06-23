@@ -3,6 +3,8 @@ layout: post
 title: "DPF/PIR 笔记：短查询 key 为什么不等于低成本更新"
 date: 2026-06-16 10:10:00 +0800
 categories: secure-query
+column: problem-exploration
+column_title: "问题探究"
 tags: [dpf, pir, update, source-reading]
 ---
 

@@ -3,6 +3,8 @@ layout: post
 title: "Public Repo Release Gate：测试通过之后，还差一条发布门"
 date: 2026-06-18 02:40:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [release, repository-hygiene, evidence, local-first]
 ---
 

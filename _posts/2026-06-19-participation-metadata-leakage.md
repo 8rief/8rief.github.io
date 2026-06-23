@@ -3,6 +3,8 @@ layout: post
 title: "参与者集合也是数据：安全聚合之外的时间侧信道"
 date: 2026-06-19 12:20:00 +0800
 categories: research-notes
+column: problem-exploration
+column_title: "问题探究"
 tags: [federated-learning, secure-aggregation, metadata, privacy]
 ---
 

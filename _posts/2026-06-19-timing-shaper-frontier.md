@@ -3,6 +3,8 @@ layout: post
 title: "给参与计数加 Laplace 噪声，为什么仍藏不住事件时间"
 date: 2026-06-19 12:30:00 +0800
 categories: research-notes
+column: problem-exploration
+column_title: "问题探究"
 tags: [differential-privacy, metadata, federated-learning, benchmarking]
 ---
 

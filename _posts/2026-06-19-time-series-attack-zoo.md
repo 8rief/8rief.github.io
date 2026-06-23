@@ -3,6 +3,8 @@ layout: post
 title: "Time-Series Attack Zoo：把隐私侧信道实验变成可比较的攻击卡片"
 date: 2026-06-19 12:40:00 +0800
 categories: research-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [time-series, privacy, benchmark, reproducibility]
 ---
 

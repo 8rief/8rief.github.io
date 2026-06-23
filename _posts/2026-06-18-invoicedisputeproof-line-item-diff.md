@@ -3,6 +3,8 @@ layout: post
 title: "InvoiceDisputeProof：发票争议先从行项目差异开始"
 date: 2026-06-18 03:16:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [local-first, evidence, invoice, documentation]
 ---
 

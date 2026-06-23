@@ -3,6 +3,8 @@ layout: post
 title: "Agent Leak Sentinel：公开项目之前，先检查智能体工作流残留"
 date: 2026-06-18 02:20:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [agent-security, secret-scanning, release, local-first]
 ---
 

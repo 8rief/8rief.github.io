@@ -3,6 +3,8 @@ layout: post
 title: "CancelProof：取消订阅时，最先缺的往往是一条时间线"
 date: 2026-06-18 03:12:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [local-first, evidence, subscription, consumer-tools]
 ---
 

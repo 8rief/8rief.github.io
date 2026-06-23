@@ -3,6 +3,8 @@ layout: post
 title: "MoveOutProof：退租前先做一份本地证据包"
 date: 2026-06-18 03:08:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [local-first, evidence, privacy, consumer-tools]
 ---
 

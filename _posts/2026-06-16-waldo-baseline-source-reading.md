@@ -3,6 +3,8 @@ layout: post
 title: "Waldo 源码笔记：实验 baseline 的协议边界如何确定"
 date: 2026-06-16 10:00:00 +0800
 categories: secure-query
+column: problem-exploration
+column_title: "问题探究"
 tags: [waldo, fss, benchmark, source-reading]
 ---
 

@@ -3,6 +3,8 @@ layout: post
 title: "ES-ORAM 研究札记：先把证明边界写成可检查清单"
 date: 2026-06-18 02:50:00 +0800
 categories: research-notes
+column: problem-exploration
+column_title: "问题探究"
 tags: [oram, privacy, proof-engineering, research-notes]
 ---
 

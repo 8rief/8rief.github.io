@@ -3,6 +3,8 @@ layout: post
 title: "Secure Selective-Scan Bench：先用成本模型否掉过早的性能结论"
 date: 2026-06-19 13:00:00 +0800
 categories: research-notes
+column: problem-exploration
+column_title: "问题探究"
 tags: [mamba, secure-inference, mpc, state-space-models]
 ---
 

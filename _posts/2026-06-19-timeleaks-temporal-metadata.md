@@ -3,6 +3,8 @@ layout: post
 title: "TimeLeaks Lab：内容加密后，发布时间仍可能泄漏事件"
 date: 2026-06-19 12:10:00 +0800
 categories: research-notes
+column: problem-exploration
+column_title: "问题探究"
 tags: [time-series, metadata, traffic-shaping, privacy]
 ---
 

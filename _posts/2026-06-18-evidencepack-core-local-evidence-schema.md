@@ -3,6 +3,8 @@ layout: post
 title: "EvidencePack Core：证据包工具先要有一个稳定的数据骨架"
 date: 2026-06-18 03:04:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [evidence, schema, local-first, documentation]
 ---
 

@@ -3,6 +3,8 @@ layout: post
 title: "三阶 selector 笔记：continuation wire 为什么是核心难点"
 date: 2026-06-16 10:40:00 +0800
 categories: secure-query
+column: problem-exploration
+column_title: "问题探究"
 tags: [pcg, aby2, tensor, failed-attempt]
 ---
 

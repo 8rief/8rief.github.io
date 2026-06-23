@@ -3,6 +3,8 @@ layout: post
 title: "Trace-F2 PCG 笔记：rho = H e 原型为什么缺少安全依据"
 date: 2026-06-16 10:30:00 +0800
 categories: secure-query
+column: problem-exploration
+column_title: "问题探究"
 tags: [pcg, trace, qa-sd, failed-attempt]
 ---
 

@@ -3,6 +3,8 @@ layout: post
 title: "ReproBadge Lite：先问仓库有没有被别人检查的基本材料"
 date: 2026-06-18 02:30:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [reproducibility, research-code, release, citation]
 ---
 

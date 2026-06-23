@@ -3,6 +3,8 @@ layout: post
 title: "Research Claim Ledger：先把结论和证据绑在一起"
 date: 2026-06-18 03:00:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [research, reproducibility, evidence, local-first]
 ---
 

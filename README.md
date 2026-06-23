@@ -1,24 +1,24 @@
 # 8rief Notes
 
-个人技术笔记站，记录安全查询、隐私计算和相关开源系统的源码阅读与构造复盘。
+个人技术笔记站，按三条主线组织：项目展示、问题探究、计算机技术教学。
 
-A personal technical notebook for secure query systems, privacy-preserving computation, and source-code-oriented retrospectives. Each post focuses on one concrete question and follows a background-definition-analysis-takeaway structure when applicable.
+A personal technical notebook organized around project showcases, problem explorations, and computer science teaching notes.
 
-## 内容范围 / Scope
+## 栏目 / Columns
 
-- 安全查询系统源码阅读 / Source reading for secure query systems
-- PIR、DPF、FSS、PCG 等密码工具学习笔记 / Notes on PIR, DPF, FSS, PCG, and related tools
-- 构造尝试失败原因与边界条件复盘 / Retrospectives on failed constructions and boundary conditions
-- 可公开的实验现象、计算结论和后续问题 / Publicly shareable measurements, calculations, and open questions
+- `project-showcase` / 项目展示：已经有 demo、报告、静态页或可复现接口的项目。文章必须讲清痛点、设计目标、详细设计、技术实现、复现方式和边界。
+- `problem-exploration` / 问题探究：研究问题、源码阅读、负结果、实验现象和边界推理。文章必须讲清问题、关键难点、分析路径、证据边界、结论和下一步。
+- `computer-science-teaching` / 计算机技术教学：教学型计算机技术文章。文章必须讲清学习目标、先修知识、核心模型、逐步实现、常见错误和练习。
 
+Existing post URLs are preserved by keeping the original `categories`; the stable site columns are stored in each post's `column` front matter.
 
-常用命令：
+## 常用命令
 
 ```bash
 git status
-git add _posts README.md
+git add _posts README.md *.md _config.yml
 git commit -m "Update notes"
 git push
 ```
 
-GitHub Pages will rebuild the site after each push to `main`.
+GitHub Pages rebuilds the site after each push to `main`.

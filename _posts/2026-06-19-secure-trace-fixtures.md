@@ -3,6 +3,8 @@ layout: post
 title: "安全时序实验先统一 trace：一个小型 fixture library 的作用"
 date: 2026-06-19 12:50:00 +0800
 categories: research-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [datasets, fixtures, time-series, reproducibility]
 ---
 

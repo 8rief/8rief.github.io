@@ -3,6 +3,8 @@ layout: post
 title: "Capsule Memory Kit：把智能体记忆做成可迁移、自维护、缓存友好的本地胶囊"
 date: 2026-06-18 03:20:00 +0800
 categories: local-tools
+column: project-showcase
+column_title: "项目展示"
 tags: [agent-memory, local-first, prompt-cache, agent-workflow]
 published: true
 ---
