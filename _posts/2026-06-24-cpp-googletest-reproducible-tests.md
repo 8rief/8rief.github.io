@@ -7,6 +7,7 @@ column: computer-science-teaching
 column_title: "计算机技术教学"
 tags: [cpp, linux, googletest, testing, cmake, reproducibility]
 ---
+{% raw %}
 
 > 主题：Linux C++ 工程开发 / GoogleTest / CTest / 可复现实验  
 > 本文命令已在 Ubuntu 24.04、GCC 13.3.0、CMake 3.28.3、Ninja 1.11.1 环境下本地执行验证。实验使用 CMake `FetchContent` 固定 GoogleTest v1.17.0，并用 SHA256 校验下载内容。
@@ -617,3 +618,4 @@ ctest --test-dir build/sanitize --output-on-failure
 - [GoogleTest Advanced: running tests](https://google.github.io/googletest/advanced.html#running-tests)
 - [CMake module: GoogleTest](https://cmake.org/cmake/help/latest/module/GoogleTest.html)
 - [CMake module: FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html)
+{% endraw %}
