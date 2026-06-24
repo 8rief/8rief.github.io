@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "HTTP 请求从 curl 到字节：看见请求行、头部和响应边界"
-date: 2026-06-25 10:20:00 +0800
+date: 2026-06-25 04:20:00 +0800
 categories: computer-science-teaching
 column: computer-science-teaching
 column_title: "计算机技术教学"
