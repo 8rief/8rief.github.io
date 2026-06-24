@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="260" viewBox="0 0 980 260" role="img" aria-labelledby="title desc">
+  <title id="title">C++ build pipeline</title>
+  <desc id="desc">Source code is preprocessed into an expanded translation unit, compiled to assembly, assembled to an object file, linked into an executable, and loaded with dynamic libraries at runtime.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <style>
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.5; rx: 10; }
+      .focus { fill: #ecfeff; stroke: #0891b2; stroke-width: 1.7; rx: 10; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 15px; fill: #0f172a; }
+      .small { font-size: 12px; fill: #475569; }
+      .cmd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #334155; }
+      .arrow { stroke: #334155; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+  <rect x="20" y="50" width="135" height="95" class="box" />
+  <text x="87" y="82" text-anchor="middle" class="text">源码</text>
+  <text x="87" y="108" text-anchor="middle" class="cmd">main.cpp</text>
+  <text x="87" y="130" text-anchor="middle" class="small">你写的 C++ 文本</text>
+
+  <line x1="155" y1="98" x2="210" y2="98" class="arrow" />
+  <text x="183" y="82" text-anchor="middle" class="cmd">-E</text>
+
+  <rect x="215" y="50" width="150" height="95" class="focus" />
+  <text x="290" y="82" text-anchor="middle" class="text">预处理</text>
+  <text x="290" y="108" text-anchor="middle" class="cmd">main.ii</text>
+  <text x="290" y="130" text-anchor="middle" class="small">展开 include / 宏</text>
+
+  <line x1="365" y1="98" x2="420" y2="98" class="arrow" />
+  <text x="393" y="82" text-anchor="middle" class="cmd">-S</text>
+
+  <rect x="425" y="50" width="135" height="95" class="box" />
+  <text x="492" y="82" text-anchor="middle" class="text">编译</text>
+  <text x="492" y="108" text-anchor="middle" class="cmd">main.s</text>
+  <text x="492" y="130" text-anchor="middle" class="small">生成汇编</text>
+
+  <line x1="560" y1="98" x2="615" y2="98" class="arrow" />
+  <text x="588" y="82" text-anchor="middle" class="cmd">-c</text>
+
+  <rect x="620" y="50" width="135" height="95" class="box" />
+  <text x="687" y="82" text-anchor="middle" class="text">汇编</text>
+  <text x="687" y="108" text-anchor="middle" class="cmd">main.o</text>
+  <text x="687" y="130" text-anchor="middle" class="small">可重定位目标文件</text>
+
+  <line x1="755" y1="98" x2="810" y2="98" class="arrow" />
+  <text x="783" y="82" text-anchor="middle" class="cmd">link</text>
+
+  <rect x="815" y="50" width="140" height="95" class="focus" />
+  <text x="885" y="82" text-anchor="middle" class="text">链接</text>
+  <text x="885" y="108" text-anchor="middle" class="cmd">hello_cpp</text>
+  <text x="885" y="130" text-anchor="middle" class="small">可执行文件</text>
+
+  <line x1="687" y1="145" x2="687" y2="190" class="arrow" />
+  <rect x="595" y="195" width="185" height="45" class="box" />
+  <text x="687" y="222" text-anchor="middle" class="small">符号表：定义 T / 未解析 U</text>
+
+  <line x1="885" y1="145" x2="885" y2="190" class="arrow" />
+  <rect x="805" y="195" width="160" height="45" class="box" />
+  <text x="885" y="214" text-anchor="middle" class="small">运行时动态加载</text>
+  <text x="885" y="232" text-anchor="middle" class="cmd">libstdc++ / libc</text>
+</svg>
