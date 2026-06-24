@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img" aria-labelledby="title desc">
+  <title id="title">Linux loopback socket and port model</title>
+  <desc id="desc">A Python process binds a TCP socket to 127.0.0.1 and a port. The kernel keeps the listening socket table, and local curl or netcat clients connect through loopback.</desc>
+  <defs><style>text{font-family:Arial,'Microsoft YaHei',sans-serif;fill:#172033}.box{fill:#f6f8fb;stroke:#315c9f;stroke-width:2;rx:16}.kernel{fill:#fff8e8;stroke:#b7791f;stroke-width:2;rx:16}.ok{fill:#edf8f0;stroke:#2f855a;stroke-width:2;rx:16}.arrow{stroke:#44546a;stroke-width:2.5;marker-end:url(#arrow);fill:none}.title{font-size:22px;font-weight:700}.small{font-size:17px}</style><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#44546a"/></marker></defs>
+  <text x="490" y="40" text-anchor="middle" class="title">socket、端口和 loopback 的最小模型</text>
+  <rect x="55" y="95" width="210" height="115" class="box"/><text x="160" y="132" text-anchor="middle" class="title">Python 进程</text><text x="160" y="164" text-anchor="middle" class="small">socket()</text><text x="160" y="190" text-anchor="middle" class="small">bind + listen</text>
+  <rect x="370" y="85" width="240" height="135" class="kernel"/><text x="490" y="124" text-anchor="middle" class="title">Linux 内核</text><text x="490" y="156" text-anchor="middle" class="small">LISTEN 表</text><text x="490" y="184" text-anchor="middle" class="small">127.0.0.1:18180</text><text x="490" y="211" text-anchor="middle" class="small">ss / lsof 可观察</text>
+  <rect x="720" y="80" width="200" height="80" class="ok"/><text x="820" y="115" text-anchor="middle" class="title">curl</text><text x="820" y="143" text-anchor="middle" class="small">HTTP 客户端</text>
+  <rect x="720" y="210" width="200" height="80" class="ok"/><text x="820" y="245" text-anchor="middle" class="title">nc</text><text x="820" y="273" text-anchor="middle" class="small">原始 TCP 字节</text>
+  <path d="M265 153 L370 153" class="arrow"/><path d="M610 140 C660 115 690 115 720 120" class="arrow"/><path d="M610 180 C660 235 690 245 720 250" class="arrow"/>
+  <rect x="220" y="305" width="540" height="75" class="box"/><text x="490" y="337" text-anchor="middle" class="title">安全边界</text><text x="490" y="365" text-anchor="middle" class="small">只绑定 loopback，只接受本机连接；不扫描公网、不触碰第三方目标。</text>
+</svg>
