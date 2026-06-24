@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="520" viewBox="0 0 1120 520" role="img" aria-labelledby="title desc">
+  <title id="title">C++ ownership smart pointer model</title>
+  <desc id="desc">unique_ptr owns one object and transfers ownership by move. Raw pointers and references observe without owning. shared_ptr instances share a control block and use_count. weak_ptr observes the control block without increasing the shared count and can break cycles.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <marker id="dashed-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+    </marker>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 18px; font-weight: 700; fill: #0f172a; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 14px; fill: #0f172a; }
+      .small { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 12px; fill: #475569; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #1e293b; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.4; rx: 10; }
+      .owner { fill: #ecfdf5; stroke: #059669; stroke-width: 1.6; rx: 10; }
+      .shared { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; rx: 10; }
+      .weak { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 1.6; rx: 10; }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.6; rx: 10; }
+      .object { fill: #ffffff; stroke: #0f172a; stroke-width: 1.5; rx: 10; }
+      .arrow { stroke: #334155; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .own { stroke: #059669; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .share { stroke: #2563eb; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .weakline { stroke: #7c3aed; stroke-width: 1.7; fill: none; stroke-dasharray: 6 4; marker-end: url(#dashed-arrow); }
+      .obs { stroke: #64748b; stroke-width: 1.4; fill: none; stroke-dasharray: 5 4; marker-end: url(#dashed-arrow); }
+    </style>
+  </defs>
+
+  <text x="32" y="36" class="title">1. 独占所有权：unique_ptr 负责释放，move 表示转移</text>
+  <rect x="55" y="65" width="180" height="66" class="owner" />
+  <text x="145" y="92" text-anchor="middle" class="code">unique_ptr&lt;T&gt;</text>
+  <text x="145" y="116" text-anchor="middle" class="small">当前唯一拥有者</text>
+  <rect x="360" y="65" width="160" height="66" class="object" />
+  <text x="440" y="96" text-anchor="middle" class="code">T object</text>
+  <text x="440" y="118" text-anchor="middle" class="small">析构由拥有者触发</text>
+  <line x1="235" y1="98" x2="360" y2="98" class="own" />
+  <rect x="650" y="65" width="190" height="66" class="owner" />
+  <text x="745" y="92" text-anchor="middle" class="code">take_unique(...)</text>
+  <text x="745" y="116" text-anchor="middle" class="small">std::move 后接管所有权</text>
+  <line x1="520" y1="98" x2="650" y2="98" class="arrow" />
+  <text x="585" y="88" text-anchor="middle" class="small">move</text>
+  <rect x="900" y="65" width="160" height="66" class="box" />
+  <text x="980" y="92" text-anchor="middle" class="code">old owner</text>
+  <text x="980" y="116" text-anchor="middle" class="small">moved-from: empty</text>
+
+  <text x="32" y="176" class="title">2. 普通观察：T* 可空，T&amp; 必有；它们都不拥有对象</text>
+  <rect x="55" y="205" width="160" height="64" class="warn" />
+  <text x="135" y="232" text-anchor="middle" class="code">T*</text>
+  <text x="135" y="254" text-anchor="middle" class="small">nullable observer</text>
+  <rect x="265" y="205" width="160" height="64" class="warn" />
+  <text x="345" y="232" text-anchor="middle" class="code">T&amp;</text>
+  <text x="345" y="254" text-anchor="middle" class="small">required observer</text>
+  <rect x="555" y="205" width="190" height="64" class="object" />
+  <text x="650" y="233" text-anchor="middle" class="code">existing object</text>
+  <text x="650" y="255" text-anchor="middle" class="small">lifetime comes from elsewhere</text>
+  <line x1="215" y1="237" x2="555" y2="225" class="obs" />
+  <line x1="425" y1="237" x2="555" y2="249" class="obs" />
+  <text x="825" y="235" class="small">观察者不能 delete，也不能延长生命周期</text>
+
+  <text x="32" y="318" class="title">3. 共享所有权：shared_ptr 共享控制块；weak_ptr 只观察控制块</text>
+  <rect x="55" y="350" width="160" height="62" class="shared" />
+  <text x="135" y="377" text-anchor="middle" class="code">shared_ptr A</text>
+  <text x="135" y="398" text-anchor="middle" class="small">owner count +1</text>
+  <rect x="55" y="430" width="160" height="62" class="shared" />
+  <text x="135" y="457" text-anchor="middle" class="code">shared_ptr B</text>
+  <text x="135" y="478" text-anchor="middle" class="small">copy: owner count +1</text>
+  <rect x="320" y="390" width="190" height="70" class="shared" />
+  <text x="415" y="417" text-anchor="middle" class="code">control block</text>
+  <text x="415" y="439" text-anchor="middle" class="small">shared count / weak count</text>
+  <rect x="620" y="390" width="165" height="70" class="object" />
+  <text x="702" y="420" text-anchor="middle" class="code">managed T</text>
+  <text x="702" y="442" text-anchor="middle" class="small">last owner destroys</text>
+  <line x1="215" y1="381" x2="320" y2="407" class="share" />
+  <line x1="215" y1="461" x2="320" y2="443" class="share" />
+  <line x1="510" y1="425" x2="620" y2="425" class="share" />
+  <rect x="880" y="350" width="175" height="62" class="weak" />
+  <text x="967" y="377" text-anchor="middle" class="code">weak_ptr</text>
+  <text x="967" y="398" text-anchor="middle" class="small">no shared count +1</text>
+  <line x1="880" y1="381" x2="510" y2="405" class="weakline" />
+  <rect x="880" y="430" width="175" height="62" class="weak" />
+  <text x="967" y="457" text-anchor="middle" class="code">lock()</text>
+  <text x="967" y="478" text-anchor="middle" class="small">alive 时临时拥有</text>
+</svg>
