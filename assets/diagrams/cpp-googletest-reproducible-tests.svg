@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+  <title id="title">GoogleTest reproducible test workflow</title>
+  <desc id="desc">Business code builds into a library. GoogleTest links the library and gtest_main. CMake discovers GoogleTest cases as CTest tests. Developers can run all tests, filter a failing suite, repeat with a fixed seed, inspect failure output, and rerun under sanitizers.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#334155" />
+    </marker>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 18px; font-weight: 700; fill: #0f172a; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 14px; fill: #0f172a; }
+      .small { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 12px; fill: #475569; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #1e293b; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.4; rx: 10; }
+      .lib { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; rx: 10; }
+      .test { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 1.6; rx: 10; }
+      .ok { fill: #ecfdf5; stroke: #059669; stroke-width: 1.6; rx: 10; }
+      .warn { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.6; rx: 10; }
+      .arrow { stroke: #334155; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .dash { stroke: #64748b; stroke-width: 1.3; fill: none; stroke-dasharray: 6 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <text x="34" y="36" class="title">GoogleTest + CTest：把失败定位、复跑命令和验证证据连起来</text>
+
+  <rect x="45" y="80" width="190" height="78" class="lib" />
+  <text x="140" y="110" text-anchor="middle" class="code">qstats library</text>
+  <text x="140" y="134" text-anchor="middle" class="small">mean / median / split</text>
+
+  <rect x="315" y="80" width="220" height="78" class="test" />
+  <text x="425" y="106" text-anchor="middle" class="code">qstats_tests</text>
+  <text x="425" y="130" text-anchor="middle" class="small">TEST / TEST_F / TEST_P</text>
+  <text x="425" y="149" text-anchor="middle" class="small">links GTest::gtest_main</text>
+
+  <rect x="615" y="80" width="220" height="78" class="ok" />
+  <text x="725" y="106" text-anchor="middle" class="code">gtest_discover_tests</text>
+  <text x="725" y="130" text-anchor="middle" class="small">GoogleTest cases → CTest tests</text>
+
+  <rect x="915" y="80" width="210" height="78" class="ok" />
+  <text x="1020" y="110" text-anchor="middle" class="code">ctest</text>
+  <text x="1020" y="134" text-anchor="middle" class="small">10 independent checks</text>
+
+  <line x1="235" y1="119" x2="315" y2="119" class="arrow" />
+  <line x1="535" y1="119" x2="615" y2="119" class="arrow" />
+  <line x1="835" y1="119" x2="915" y2="119" class="arrow" />
+
+  <rect x="75" y="230" width="230" height="86" class="box" />
+  <text x="190" y="258" text-anchor="middle" class="code">ctest -N</text>
+  <text x="190" y="282" text-anchor="middle" class="small">列出测试名</text>
+  <text x="190" y="300" text-anchor="middle" class="small">定位失败入口</text>
+
+  <rect x="355" y="230" width="230" height="86" class="box" />
+  <text x="470" y="258" text-anchor="middle" class="code">--gtest_filter</text>
+  <text x="470" y="282" text-anchor="middle" class="small">只复跑一个测试族</text>
+  <text x="470" y="300" text-anchor="middle" class="small">缩短调试路径</text>
+
+  <rect x="635" y="230" width="230" height="86" class="box" />
+  <text x="750" y="258" text-anchor="middle" class="code">repeat + shuffle + seed</text>
+  <text x="750" y="282" text-anchor="middle" class="small">暴露顺序依赖</text>
+  <text x="750" y="300" text-anchor="middle" class="small">保留可复跑条件</text>
+
+  <rect x="915" y="230" width="210" height="86" class="warn" />
+  <text x="1020" y="258" text-anchor="middle" class="code">expected / actual</text>
+  <text x="1020" y="282" text-anchor="middle" class="small">失败输出变成证据</text>
+  <text x="1020" y="300" text-anchor="middle" class="small">失败样例可转回归</text>
+
+  <line x1="1020" y1="158" x2="190" y2="230" class="dash" />
+  <line x1="1020" y1="158" x2="470" y2="230" class="dash" />
+  <line x1="1020" y1="158" x2="750" y2="230" class="dash" />
+  <line x1="1020" y1="158" x2="1020" y2="230" class="dash" />
+
+  <rect x="135" y="405" width="360" height="80" class="ok" />
+  <text x="315" y="434" text-anchor="middle" class="code">normal Debug build</text>
+  <text x="315" y="459" text-anchor="middle" class="small">功能正确性与异常路径检查</text>
+
+  <rect x="685" y="405" width="360" height="80" class="ok" />
+  <text x="865" y="434" text-anchor="middle" class="code">ASan / UBSan build</text>
+  <text x="865" y="459" text-anchor="middle" class="small">同一组测试在插桩环境复跑</text>
+
+  <line x1="315" y1="316" x2="315" y2="405" class="arrow" />
+  <line x1="865" y1="316" x2="865" y2="405" class="arrow" />
+</svg>
