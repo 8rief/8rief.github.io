@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "C++ 程序如何从源码变成可执行文件"
-date: 2026-06-24 22:10:00 +0800
+date: 2026-06-24 08:00:00 +0800
 categories: computer-science-teaching
 column: computer-science-teaching
 column_title: "计算机技术教学"
