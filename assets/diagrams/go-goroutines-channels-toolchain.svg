@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+  <title id="title">Go goroutines channels and toolchain</title>
+  <desc id="desc">Jobs flow from main goroutine to a job channel, multiple worker goroutines process them, results flow through a result channel, context cancellation reaches feeder and workers, and Go toolchain commands format, test, race-check, vet, and run the program.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#334155" /></marker>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 18px; font-weight: 700; fill: #0f172a; }
+      .small { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif; font-size: 12px; fill: #475569; }
+      .code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #1e293b; }
+      .box { fill: #f8fafc; stroke: #334155; stroke-width: 1.4; rx: 10; }
+      .main { fill: #eff6ff; stroke: #2563eb; stroke-width: 1.6; rx: 10; }
+      .chan { fill: #ecfdf5; stroke: #059669; stroke-width: 1.6; rx: 10; }
+      .worker { fill: #fff7ed; stroke: #ea580c; stroke-width: 1.6; rx: 10; }
+      .tool { fill: #f5f3ff; stroke: #7c3aed; stroke-width: 1.6; rx: 10; }
+      .race { fill: #fef2f2; stroke: #dc2626; stroke-width: 1.6; rx: 10; }
+      .arrow { stroke: #334155; stroke-width: 1.5; fill: none; marker-end: url(#arrow); }
+      .cancel { stroke: #dc2626; stroke-width: 1.4; fill: none; stroke-dasharray: 6 4; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <text x="34" y="38" class="title">Go：用 goroutine 执行任务，用 channel 明确数据流，用标准工具链验证</text>
+
+  <rect x="50" y="95" width="170" height="72" class="main" />
+  <text x="135" y="124" text-anchor="middle" class="code">main goroutine</text>
+  <text x="135" y="147" text-anchor="middle" class="small">create jobs + context</text>
+
+  <rect x="285" y="95" width="145" height="72" class="chan" />
+  <text x="357" y="124" text-anchor="middle" class="code">jobCh</text>
+  <text x="357" y="147" text-anchor="middle" class="small">Job stream</text>
+
+  <rect x="500" y="55" width="150" height="58" class="worker" />
+  <text x="575" y="80" text-anchor="middle" class="code">worker 1</text>
+  <text x="575" y="99" text-anchor="middle" class="small">count words</text>
+  <rect x="500" y="130" width="150" height="58" class="worker" />
+  <text x="575" y="155" text-anchor="middle" class="code">worker 2</text>
+  <text x="575" y="174" text-anchor="middle" class="small">count words</text>
+  <rect x="500" y="205" width="150" height="58" class="worker" />
+  <text x="575" y="230" text-anchor="middle" class="code">worker N</text>
+  <text x="575" y="249" text-anchor="middle" class="small">count words</text>
+
+  <rect x="730" y="130" width="150" height="72" class="chan" />
+  <text x="805" y="159" text-anchor="middle" class="code">resultCh</text>
+  <text x="805" y="182" text-anchor="middle" class="small">Result stream</text>
+
+  <rect x="950" y="130" width="170" height="72" class="main" />
+  <text x="1035" y="159" text-anchor="middle" class="code">collector</text>
+  <text x="1035" y="182" text-anchor="middle" class="small">sort + summarize</text>
+
+  <line x1="220" y1="131" x2="285" y2="131" class="arrow" />
+  <line x1="430" y1="131" x2="500" y2="84" class="arrow" />
+  <line x1="430" y1="131" x2="500" y2="159" class="arrow" />
+  <line x1="430" y1="131" x2="500" y2="234" class="arrow" />
+  <line x1="650" y1="84" x2="730" y2="152" class="arrow" />
+  <line x1="650" y1="159" x2="730" y2="166" class="arrow" />
+  <line x1="650" y1="234" x2="730" y2="180" class="arrow" />
+  <line x1="880" y1="166" x2="950" y2="166" class="arrow" />
+
+  <rect x="285" y="300" width="160" height="64" class="race" />
+  <text x="365" y="326" text-anchor="middle" class="code">context cancel</text>
+  <text x="365" y="347" text-anchor="middle" class="small">ctx.Done()</text>
+  <line x1="365" y1="300" x2="357" y2="167" class="cancel" />
+  <line x1="445" y1="315" x2="500" y2="234" class="cancel" />
+  <line x1="445" y1="330" x2="500" y2="159" class="cancel" />
+
+  <rect x="70" y="430" width="160" height="62" class="tool" />
+  <text x="150" y="456" text-anchor="middle" class="code">gofmt</text>
+  <text x="150" y="477" text-anchor="middle" class="small">format</text>
+  <rect x="270" y="430" width="160" height="62" class="tool" />
+  <text x="350" y="456" text-anchor="middle" class="code">go test</text>
+  <text x="350" y="477" text-anchor="middle" class="small">tests + examples</text>
+  <rect x="470" y="430" width="160" height="62" class="tool" />
+  <text x="550" y="456" text-anchor="middle" class="code">go test -race</text>
+  <text x="550" y="477" text-anchor="middle" class="small">runtime race check</text>
+  <rect x="670" y="430" width="160" height="62" class="tool" />
+  <text x="750" y="456" text-anchor="middle" class="code">go vet</text>
+  <text x="750" y="477" text-anchor="middle" class="small">suspicious constructs</text>
+  <rect x="870" y="430" width="160" height="62" class="tool" />
+  <text x="950" y="456" text-anchor="middle" class="code">go run</text>
+  <text x="950" y="477" text-anchor="middle" class="small">CLI smoke test</text>
+  <line x1="230" y1="461" x2="270" y2="461" class="arrow" />
+  <line x1="430" y1="461" x2="470" y2="461" class="arrow" />
+  <line x1="630" y1="461" x2="670" y2="461" class="arrow" />
+  <line x1="830" y1="461" x2="870" y2="461" class="arrow" />
+</svg>
