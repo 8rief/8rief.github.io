@@ -5,6 +5,7 @@ date: 2026-06-24 12:20:00 +0800
 categories: computer-science-teaching
 column: computer-science-teaching
 column_title: "计算机技术教学"
+excerpt: "用 GoogleTest、CTest、过滤运行、随机种子和 sanitizer，把 C++ 测试组织成可定位、可复跑、可审计的验证流。"
 tags: [cpp, linux, googletest, testing, cmake, reproducibility]
 ---
 {% raw %}

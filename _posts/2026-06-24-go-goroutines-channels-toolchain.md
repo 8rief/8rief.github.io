@@ -5,6 +5,7 @@ date: 2026-06-24 14:20:00 +0800
 categories: computer-science-teaching
 column: computer-science-teaching
 column_title: "计算机技术教学"
+excerpt: "用 goroutines、channels、context 和 Go 标准工具链，构建可测试的并发 worker pool。"
 tags: [go, linux, goroutine, channel, concurrency, testing]
 ---
 {% raw %}

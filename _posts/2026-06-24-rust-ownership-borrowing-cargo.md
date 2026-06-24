@@ -5,6 +5,7 @@ date: 2026-06-24 13:20:00 +0800
 categories: computer-science-teaching
 column: computer-science-teaching
 column_title: "计算机技术教学"
+excerpt: "用 Rust ownership、borrowing 和 Cargo 工作流，理解编译器如何检查资源流动、借用边界和测试复现。"
 tags: [rust, linux, ownership, borrowing, cargo, reproducibility]
 ---
 {% raw %}
