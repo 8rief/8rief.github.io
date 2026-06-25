@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="360" viewBox="0 0 940 360">
+  <rect width="940" height="360" fill="#f8fafc"/>
+  <text x="42" y="54" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">Möbius 反演：从总量扣出精确层</text>
+  <rect x="70" y="105" width="220" height="78" rx="15" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="102" y="136" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">总量 x^(q^n)-x</text>
+  <text x="102" y="162" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">包含所有 d|n 的因子</text>
+  <path d="M305 144 H395" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="410" y="105" width="210" height="78" rx="15" fill="#fef3c7" stroke="#d97706"/>
+  <text x="442" y="136" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">用 μ(d) 加减</text>
+  <text x="442" y="162" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">保留恰好 n 次</text>
+  <path d="M635 144 H725" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="740" y="105" width="140" height="78" rx="15" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="772" y="136" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">V_n(x)</text>
+  <text x="760" y="162" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">n 次不可约乘积</text>
+  <rect x="145" y="245" width="650" height="60" rx="16" fill="#fff" stroke="#94a3b8"/>
+  <text x="200" y="281" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">N_q(n)=1/n · sum_(d|n) μ(d) q^(n/d)</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+</svg>

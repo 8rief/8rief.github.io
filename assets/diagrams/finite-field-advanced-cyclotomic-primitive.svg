@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="360" viewBox="0 0 940 360">
+  <rect width="940" height="360" fill="#f8fafc"/>
+  <text x="42" y="54" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">分圆多项式与本原多项式</text>
+  <circle cx="240" cy="178" r="95" fill="#ecfeff" stroke="#0891b2" stroke-width="3"/>
+  <text x="183" y="175" font-size="20" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">阶正好为 n 的根</text>
+  <text x="190" y="205" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">Φ_n(x)</text>
+  <path d="M345 178 H465" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="485" y="120" width="175" height="115" rx="16" fill="#fef3c7" stroke="#d97706"/>
+  <text x="520" y="154" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">在 F_q 上分解</text>
+  <text x="515" y="184" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">每个因子对应一组</text>
+  <text x="515" y="208" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">Frobenius 共轭根</text>
+  <path d="M675 178 H760" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="775" y="120" width="120" height="115" rx="16" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="805" y="154" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">本原</text>
+  <text x="790" y="184" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">阶为 q^m-1</text>
+  <text x="790" y="208" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">次数为 m</text>
+  <text x="105" y="315" font-size="17" fill="#475569" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">例：Φ_7(x) 在 F_2 上分成两个三次因子，对应 F_8 的本原元共轭类。</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+</svg>

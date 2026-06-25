@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="360" viewBox="0 0 940 360">
+  <rect width="940" height="360" fill="#f8fafc"/>
+  <text x="42" y="54" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">m 序列：最大周期的线性递推序列</text>
+  <circle cx="470" cy="180" r="112" fill="#ecfeff" stroke="#0891b2" stroke-width="3"/>
+  <text x="426" y="117" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">001</text>
+  <text x="535" y="150" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">010</text>
+  <text x="533" y="230" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">101</text>
+  <text x="445" y="270" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">111</text>
+  <text x="350" y="220" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">110</text>
+  <text x="350" y="150" font-size="17" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">100</text>
+  <text x="427" y="187" font-size="22" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">2^m-1 个非零状态</text>
+  <text x="215" y="315" font-size="17" fill="#475569" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">每个非零 m 元组在一个周期中出现一次；零状态不进入循环。</text>
+</svg>
