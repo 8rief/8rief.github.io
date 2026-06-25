@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-label="number theory toolkit diagram">
+<rect width="920" height="220" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#334155"/></marker></defs>
+<rect x="30" y="60" width="145" height="82" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="102" y="94" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">gcd / exgcd</text>
+<text x="102" y="120" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">整除结构</text>
+<line x1="175" y1="101.0" x2="187" y2="101.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="205" y="60" width="145" height="82" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="278" y="94" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">筛法</text>
+<text x="278" y="120" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">素数表</text>
+<line x1="350" y1="101.0" x2="362" y2="101.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="380" y="60" width="145" height="82" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="452" y="94" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">快速幂</text>
+<text x="452" y="120" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">模乘闭包</text>
+<line x1="525" y1="101.0" x2="537" y2="101.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="555" y="60" width="145" height="82" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="628" y="94" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">逆元</text>
+<text x="628" y="120" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">ax=1 mod m</text>
+<line x1="700" y1="101.0" x2="712" y2="101.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="730" y="60" width="145" height="82" rx="14" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="802" y="94" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">CRT</text>
+<text x="802" y="120" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">同余合并</text>
+</svg>

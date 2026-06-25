@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-label="Bellman Ford relaxation diagram">
+<rect width="920" height="260" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#334155"/></marker></defs>
+<rect x="38" y="80" width="160" height="86" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="118" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">初始化 dist</text>
+<text x="118" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">源点为 0</text>
+<line x1="198" y1="123.0" x2="224" y2="123.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="242" y="80" width="160" height="86" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="322" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">重复松弛</text>
+<text x="322" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">最多 n-1 轮</text>
+<line x1="402" y1="123.0" x2="428" y2="123.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="446" y="80" width="160" height="86" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="526" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">第 n 轮检查</text>
+<text x="526" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">仍可变小</text>
+<line x1="606" y1="123.0" x2="632" y2="123.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="650" y="80" width="180" height="86" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="740" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">可达负环</text>
+<text x="740" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">最短路无下界</text>
+</svg>
