@@ -34,11 +34,15 @@ permalink: /computer-science-teaching/
 | --- | --- | --- |
 | Python | 本地证据 CLI + API | venv、pyproject、文件/JSON/CSV、Typer、pytest、FastAPI、httpx、配置和日志 |
 | Java | 后端 REST API | JDK/JVM、Maven/Gradle、集合/泛型、JUnit、Jackson、Spring Boot、数据访问 |
-| Go | 并发网络服务 | module、error、net/http、context、goroutine/channel、测试、服务关闭 |
+| Go | 本地服务健康检查器 | module、struct/interface/error、JSON/CSV、net/http、context、goroutine/channel、CLI、测试、优雅关闭 |
 | C++ | 本地文件索引 CLI | CMake/Ninja、RAII、测试、fmt/spdlog、JSON、HTTP/SQLite、调试和性能分析 |
 | Rust | 可靠 CLI | Cargo、ownership、Result/Option、serde、clap、tokio/reqwest、测试和错误处理 |
 
 Linux、网络和安全基础文章作为横向支撑：每篇都给出本地命令、预期观察、实验边界和可复跑小产物。
+
+## 深度学习路线
+
+深度学习内容会作为后续有限发布包推进。路线先补必要基础：数值 Python 与 tensor、线性代数、微积分与自动微分、概率统计、优化、简单 baseline、PyTorch 数据集与训练循环、评估与 checkpoint。只有在这些基础能本地复现之后，再进入 MLP、CNN、序列模型、attention/Transformer 和小型部署项目。涉及模型效果的文章必须给出 baseline，或者明确说明该文只解释机制、不做效果主张。
 
 ## 已归入本栏目
 
