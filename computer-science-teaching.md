@@ -24,6 +24,22 @@ permalink: /computer-science-teaching/
 5. **常见错误**：指出容易误解的地方和调试方法。
 6. **练习或延伸**：给出一两个能检验理解的小任务。
 
+## 从0到可运行项目路线
+
+语言教学采用有限发布包：每门语言围绕一个结课项目，从环境、核心语法、依赖管理、标准库、第三方库、测试、配置、日志、README 和 demo transcript 逐步推进。文章数量服务于可复现项目，不以单纯篇数作为完成标准。
+
+当前路线：
+
+| 方向 | 目标项目形态 | 重点能力 |
+| --- | --- | --- |
+| Python | 本地证据 CLI + API | venv、pyproject、文件/JSON/CSV、Typer、pytest、FastAPI、httpx、配置和日志 |
+| Java | 后端 REST API | JDK/JVM、Maven/Gradle、集合/泛型、JUnit、Jackson、Spring Boot、数据访问 |
+| Go | 并发网络服务 | module、error、net/http、context、goroutine/channel、测试、服务关闭 |
+| C++ | 本地文件索引 CLI | CMake/Ninja、RAII、测试、fmt/spdlog、JSON、HTTP/SQLite、调试和性能分析 |
+| Rust | 可靠 CLI | Cargo、ownership、Result/Option、serde、clap、tokio/reqwest、测试和错误处理 |
+
+Linux、网络和安全基础文章作为横向支撑：每篇都给出本地命令、预期观察、实验边界和可复跑小产物。
+
 ## 已归入本栏目
 
 {% assign posts = site.posts | where: "column", "computer-science-teaching" %}
