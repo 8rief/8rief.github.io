@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+  <rect width="920" height="360" fill="#f8fafc"/>
+  <text x="40" y="52" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">用不可约多项式构造有限域</text>
+  <rect x="55" y="95" width="230" height="82" rx="14" fill="#e0f2fe" stroke="#0284c7"/>
+  <text x="82" y="128" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">多项式环 F_p[x]</text>
+  <text x="82" y="154" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">能加、能乘，但 x 没有逆</text>
+  <path d="M300 136 H395" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="410" y="95" width="215" height="82" rx="14" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="438" y="128" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">选择不可约 f(x)</text>
+  <text x="438" y="154" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">次数 m，作为降次规则</text>
+  <path d="M640 136 H715" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="725" y="95" width="150" height="82" rx="14" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="746" y="128" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">商域</text>
+  <text x="746" y="154" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">F_p[x]/(f)</text>
+  <rect x="120" y="232" width="680" height="68" rx="16" fill="#fff" stroke="#94a3b8"/>
+  <text x="165" y="260" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">元素统一写成 a_0+a_1α+...+a_(m-1)α^(m-1)，其中 α=x mod f(x)</text>
+  <text x="275" y="285" font-size="16" fill="#475569" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">乘法后用 f(α)=0 把高次幂降回来</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+</svg>

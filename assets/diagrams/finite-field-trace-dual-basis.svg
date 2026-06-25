@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+  <rect width="920" height="360" fill="#f8fafc"/>
+  <text x="40" y="52" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">迹、范数与对偶基</text>
+  <rect x="70" y="95" width="230" height="86" rx="16" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="108" y="128" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">扩域 K=F_(q^n)</text>
+  <text x="108" y="154" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">元素 a 有 n 个共轭元</text>
+  <path d="M315 138 H410" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="425" y="95" width="220" height="86" rx="16" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="455" y="128" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">Trace / Norm</text>
+  <text x="455" y="154" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">共轭元之和 / 之积</text>
+  <path d="M660 138 H745" stroke="#334155" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="755" y="95" width="120" height="86" rx="16" fill="#fef3c7" stroke="#d97706"/>
+  <text x="790" y="128" font-size="19" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">小域 F_q</text>
+  <text x="780" y="154" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">输出回底层</text>
+  <rect x="155" y="235" width="610" height="66" rx="16" fill="#fff" stroke="#94a3b8"/>
+  <text x="190" y="263" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">对偶基：Tr(b_i c_j)=δ_ij，因此坐标 x_j=Tr(x c_j)</text>
+  <text x="245" y="288" font-size="15" fill="#475569" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">迹把“坐标提取”变成一个线性函数</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#334155"/></marker></defs>
+</svg>

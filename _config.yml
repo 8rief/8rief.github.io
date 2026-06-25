@@ -1,5 +1,5 @@
 title: 8rief Notes
-description: 项目展示、问题探究、计算机技术教学、算法与数据结构笔记 / Project showcases, problem explorations, computer science teaching notes, and algorithms/data-structures notes
+description: 项目展示、问题探究、计算机技术教学、算法与数据结构、数学基础笔记 / Project showcases, problem explorations, computer science teaching notes, algorithms/data-structures notes, and mathematical foundations notes
 theme: minima
 author:
   name: 8rief
@@ -11,5 +11,6 @@ header_pages:
   - problem-exploration.md
   - computer-science-teaching.md
   - algorithms-data-structures.md
+  - mathematical-foundations.md
   - posts.md
   - about.md

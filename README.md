@@ -1,8 +1,8 @@
 # 8rief Notes
 
-个人技术笔记站，按四条主线组织：项目展示、问题探究、计算机技术教学、算法与数据结构。
+个人技术笔记站，按五条主线组织：项目展示、问题探究、计算机技术教学、算法与数据结构、数学基础。
 
-A personal technical notebook organized around project showcases, problem explorations, computer science teaching notes, and algorithms/data-structures notes.
+A personal technical notebook organized around project showcases, problem explorations, computer science teaching notes, algorithms/data-structures notes, and mathematical foundations notes.
 
 ## 栏目 / Columns
 
@@ -10,6 +10,7 @@ A personal technical notebook organized around project showcases, problem explor
 - `problem-exploration` / 问题探究：研究问题、源码阅读、负结果、实验现象和边界推理。文章必须讲清问题、关键难点、分析路径、证据边界、结论和下一步。
 - `computer-science-teaching` / 计算机技术教学：教学型计算机技术文章。文章必须讲清学习目标、先修知识、核心模型、逐步实现、常见错误和练习。
 - `algorithms-data-structures` / 算法与数据结构：算法和数据结构专题。文章必须讲清问题模型、不变量、正确性理由、复杂度、C++ 实现、测试边界和练习。
+- `mathematical-foundations` / 数学基础：整理有限域、数论、线性代数、概率、计算代数等基础概念。文章必须讲清问题来源、定义、直观模型、计算例子、用途和误区。
 
 Existing post URLs are preserved by keeping the original `categories`; the stable site columns are stored in each post's `column` front matter.
 
@@ -17,7 +18,7 @@ Existing post URLs are preserved by keeping the original `categories`; the stabl
 
 ```bash
 git status
-git add _posts README.md *.md _config.yml assets/diagrams
+git add _posts README.md *.md _config.yml _layouts assets/diagrams
 git commit -m "Update notes"
 git push
 ```
