@@ -38,6 +38,7 @@ permalink: /computer-science-teaching/
 | C++ | 本地文件索引 CLI + API | CMake/Ninja、FetchContent、CLI11、nlohmann/json、CSV、Catch2、spdlog、cpp-httplib、README/demo |
 | Rust | 日志洞察 CLI + 本地 API | Cargo、ownership/borrowing、Result/Option、thiserror/anyhow、serde、clap、测试、clippy、Tokio/Axum、tracing |
 | 深度学习基础 | XOR toy classifier baseline → MLP | NumPy/tensor、线性代数、autograd、概率统计、优化、baseline、Dataset/DataLoader、checkpoint、可复现实验 |
+| Linux 网络与授权安全基础 | 本地 HTTP 服务 + service map + hardening report | interface/route/socket/resolver、ss/curl、loopback service map、HTTP headers、path boundary、subprocess boundary |
 
 Linux、网络和安全基础文章作为横向支撑：每篇都给出本地命令、预期观察、实验边界和可复跑小产物。
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430" role="img" aria-labelledby="title desc">
+<title id="title">DNS 到 HTTP 请求路径</title>
+<desc id="desc">DNS 到 HTTP 请求路径 的结构示意图。</desc>
+<rect width="940" height="430" fill="#f8fafc"/>
+<text x="40" y="44" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">DNS 到 HTTP 请求路径</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="210" y1="185.0" x2="260" y2="185.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="410" y1="185.0" x2="470" y2="185.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="630" y1="185.0" x2="700" y2="185.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="60" y="150" width="150" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="135.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">getent</text>
+<text x="135.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">name lookup</text>
+<rect x="260" y="150" width="150" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="335.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">address:port</text>
+<text x="335.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">connect</text>
+<rect x="470" y="150" width="160" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="550.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">request line</text>
+<text x="550.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">GET /health</text>
+<rect x="700" y="150" width="160" height="70" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="780.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">status+headers</text>
+<text x="780.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">body</text>
+</svg>

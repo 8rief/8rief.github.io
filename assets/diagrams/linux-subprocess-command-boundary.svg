@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430" role="img" aria-labelledby="title desc">
+<title id="title">命令执行边界</title>
+<desc id="desc">命令执行边界 的结构示意图。</desc>
+<rect width="940" height="430" fill="#f8fafc"/>
+<text x="40" y="44" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">命令执行边界</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="210" y1="185.0" x2="270" y2="185.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="420" y1="185.0" x2="480" y2="185.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="630" y1="185.0" x2="690" y2="185.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="420" y1="185.0" x2="270" y2="310.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="80" y="150" width="130" height="70" rx="14" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="145.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">input</text>
+<text x="145.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">string</text>
+<rect x="270" y="150" width="150" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="345.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">type check</text>
+<text x="345.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">IP literal</text>
+<rect x="480" y="150" width="150" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="555.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">argv list</text>
+<text x="555.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">no shell</text>
+<rect x="690" y="150" width="160" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="770.0" y="175.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">subprocess</text>
+<text x="770.0" y="197.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">bounded output</text>
+<rect x="270" y="280" width="150" height="60" rx="14" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="345.0" y="300.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">reject</text>
+<text x="345.0" y="322.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">empty argv</text>
+</svg>

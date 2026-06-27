@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430" role="img" aria-labelledby="title desc">
+<title id="title">Linux 网络四层观察模型</title>
+<desc id="desc">Linux 网络四层观察模型 的结构示意图。</desc>
+<rect width="940" height="430" fill="#f8fafc"/>
+<text x="40" y="44" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">Linux 网络四层观察模型</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="200" y1="180.0" x2="250" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="390" y1="180.0" x2="440" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="860" y1="180.0" x2="440" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="60" y="145" width="140" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="130.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">interface</text>
+<text x="130.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">lo/address</text>
+<rect x="250" y="145" width="140" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="320.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">route</text>
+<text x="320.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">local path</text>
+<rect x="440" y="145" width="170" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="525.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">socket</text>
+<text x="525.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">127.0.0.1:18480</text>
+<rect x="680" y="145" width="180" height="70" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="770.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">resolver</text>
+<text x="770.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">localhost -> address</text>
+</svg>

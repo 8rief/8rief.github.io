@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430" role="img" aria-labelledby="title desc">
+<title id="title">HTTP 加固检查链</title>
+<desc id="desc">HTTP 加固检查链 的结构示意图。</desc>
+<rect width="940" height="430" fill="#f8fafc"/>
+<text x="40" y="44" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">HTTP 加固检查链</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="180" y1="175.0" x2="220" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="360" y1="175.0" x2="400" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="570" y1="175.0" x2="610" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="780" y1="175.0" x2="390" y2="315.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="140" width="130" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="115.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">bind</text>
+<text x="115.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">127.0.0.1</text>
+<rect x="220" y="140" width="140" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="290.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">methods</text>
+<text x="290.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">GET/HEAD</text>
+<rect x="400" y="140" width="170" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="485.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">headers</text>
+<text x="485.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">nosniff/no-store</text>
+<rect x="610" y="140" width="170" height="70" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="695.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">boundaries</text>
+<text x="695.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">path+process</text>
+<rect x="390" y="280" width="160" height="70" rx="14" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="470.0" y="305.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">report</text>
+<text x="470.0" y="327.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">pass/review</text>
+</svg>

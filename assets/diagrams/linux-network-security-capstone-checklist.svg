@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430" role="img" aria-labelledby="title desc">
+<title id="title">Linux 网络安全基础结课证据链</title>
+<desc id="desc">Linux 网络安全基础结课证据链 的结构示意图。</desc>
+<rect width="940" height="430" fill="#f8fafc"/>
+<text x="40" y="44" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">Linux 网络安全基础结课证据链</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="190" y1="170.0" x2="230" y2="170.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="380" y1="170.0" x2="430" y2="170.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="580" y1="170.0" x2="630" y2="170.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="790" y1="170.0" x2="390" y2="315.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="135" width="140" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="120.0" y="160.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">loopback</text>
+<text x="120.0" y="182.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">service</text>
+<rect x="230" y="135" width="150" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="305.0" y="160.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">ss + curl</text>
+<text x="305.0" y="182.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">transcript</text>
+<rect x="430" y="135" width="150" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="505.0" y="160.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">service map</text>
+<text x="505.0" y="182.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">JSON</text>
+<rect x="630" y="135" width="160" height="70" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="710.0" y="160.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">path/process</text>
+<text x="710.0" y="182.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">evidence</text>
+<rect x="390" y="280" width="160" height="70" rx="14" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="470.0" y="305.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">hardening</text>
+<text x="470.0" y="327.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">report</text>
+</svg>
