@@ -17,6 +17,20 @@ permalink: /project-showcase/
 5. **复现方式**：最小命令、样例输入、预期输出。
 6. **边界**：工具覆盖哪些判断，哪些判断必须交给人工或外部审查。
 
+
+## 阅读分组
+
+项目展示不追求线性学习顺序，适合按用途阅读：
+
+| 分组 | 文章方向 | 阅读目的 |
+| --- | --- | --- |
+| 发布与治理门 | Release Integrity Suite、Public Repo Release Gate、Dataset Governance Suite、Paper Figure Auditor、Agent Leak Sentinel | 理解公开发布前如何检查证据、残留、数据集和图表主张 |
+| 本地证据工具 | EvidencePack Core、MoveOutProof、CancelProof、InvoiceDisputeProof、RedactProof、ReproBadge Lite | 理解如何把现实争议或复现要求转成可保存的本地证据包 |
+| 研究支撑工具 | Research Claim Ledger、Secure Trace Fixtures、Time-Series Attack Zoo | 理解研究实验如何保留 claim-evidence、trace 和攻击卡片 |
+| Agent 记忆工具 | Capsule Memory Kit | 理解本地优先、可迁移、可维护的 agent 记忆胶囊设计 |
+
+这些文章分类合理，但早期文章多用自定义小标题，不完全等同于后来的“痛点、设计目标、详细设计、技术实现、复现方式、边界”固定标题。后续新项目展示应继续使用固定结构。
+
 ## 已归入本栏目
 
 {% assign posts = site.posts | where: "column", "project-showcase" %}

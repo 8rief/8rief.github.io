@@ -24,6 +24,41 @@ permalink: /computer-science-teaching/
 5. **常见错误**：指出容易误解的地方和调试方法。
 6. **练习或延伸**：给出一两个能检验理解的小任务。
 
+
+## 建议学习路径
+
+下面的路径用于解决默认文章列表按发布时间倒序显示的问题。学习时优先按这里的顺序走；底部“已归入本栏目”保留为全量索引。
+
+### 基础工具与系统
+
+| 顺序 | 发布包 | 从哪里开始 | 收尾项目 | 适合解决的问题 |
+| --- | --- | --- | --- | --- |
+| 1 | Git 基础与协作 | [Git 心智模型：working tree、index、commit 和 repository](/computer-science-teaching/2026/06/28/git-working-tree-index-commit.html) | [Git repo lab、release tag 和协作检查表](/computer-science-teaching/2026/06/28/git-release-tag-gitignore-capstone.html) | 版本控制、协作、冲突解决和发布前检查 |
+| 2 | OS/Linux 进程与文件 | [Linux 文件系统：路径、目录项、inode 和 stat 怎么连起来](/computer-science-teaching/2026/06/28/linux-filesystem-path-inode-stat.html) | [本地 system observer 报告](/computer-science-teaching/2026/06/28/linux-system-observer-capstone.html) | 文件、进程、权限、信号、文本流水线 |
+| 3 | SQL 实用开发（待写） | SQLite-first SQL 语法与开发场景 | 本地 SQL 报表 CLI | 查询、增删改、事务、参数化查询、导入导出 |
+
+### 从0到可运行项目
+
+| 顺序 | 语言/方向 | 从哪里开始 | 收尾项目 | 重点 |
+| --- | --- | --- | --- | --- |
+| 1 | Python | [Python 环境和依赖管理](/computer-science-teaching/2026/06/25/python-environment-venv-packaging.html) | [Python 项目收尾](/computer-science-teaching/2026/06/25/python-project-structure-config-logging-readme.html) | venv、文件/JSON/CSV、Typer、pytest、FastAPI、配置和日志 |
+| 2 | Java | [Java 工具链和 Maven 项目结构](/computer-science-teaching/2026/06/25/java-toolchain-maven-project-layout.html) | [Java 项目收尾](/computer-science-teaching/2026/06/25/java-project-packaging-readme-demo.html) | Maven、领域模型、JUnit、Jackson、Spring Boot、CLI/API demo |
+| 3 | Go | [Go 工具链和 module](/computer-science-teaching/2026/06/25/go-toolchain-module-project-layout.html) | [Go 项目收尾](/computer-science-teaching/2026/06/25/go-project-tests-readme-demo.html) | module、error、JSON/CSV、net/http、context、goroutine、测试 |
+| 4 | Rust | [Rust 工具链和 Cargo 项目结构](/computer-science-teaching/2026/06/25/rust-toolchain-cargo-project-layout.html) | [Rust 项目收尾](/computer-science-teaching/2026/06/25/rust-project-readme-demo-release-checklist.html) | Cargo、ownership、Result/Option、serde、clap、测试、Axum |
+| 5 | C++ 基础工程 | [C++ 程序如何从源码变成可执行文件](/computer-science-teaching/2026/06/24/cpp-build-pipeline-source-to-executable.html) | [GoogleTest 和可复现实验](/computer-science-teaching/2026/06/24/cpp-googletest-reproducible-tests.html) | 编译链接、头文件、RAII、所有权、CMake、测试 |
+| 6 | C++ 库项目 | [CMake FetchContent 和第三方库边界](/computer-science-teaching/2026/06/25/cpp-cmake-fetchcontent-library-boundary.html) | [C++ 项目收尾](/computer-science-teaching/2026/06/25/cpp-project-readme-demo-release-checklist.html) | CLI11、nlohmann/json、CSV、Catch2、spdlog、cpp-httplib |
+
+### 机制与实验基础
+
+| 顺序 | 发布包 | 从哪里开始 | 收尾项目 | 说明 |
+| --- | --- | --- | --- | --- |
+| 1 | 深度学习基础 | [先把可复现实验跑起来](/computer-science-teaching/2026/06/25/deep-learning-route-reproducible-lab.html) | [从 XOR baseline 到 MLP 对比](/computer-science-teaching/2026/06/25/deep-learning-capstone-xor-mlp-comparison.html) | 先跑 baseline，再解释 tensor、autograd、loss、训练循环 |
+| 2 | Linux 网络与授权安全基础 | [Linux 网络模型](/computer-science-teaching/2026/06/27/linux-network-model-interface-route-socket.html) | [本地服务地图、路径边界和加固报告](/computer-science-teaching/2026/06/27/linux-network-security-capstone-checklist.html) | 已完成，但后续安全专题暂缓；可作为网络基础补充 |
+
+### 写作和学习原则
+
+语言、SQL 和开发基础都按“需求 → 用法 → 原理 → 实操”组织。原理不是省略，而是从真实需求出发，用来解释为什么更快、更好用、更安全、更容易维护，或者为什么某个库/API 这样设计。
+
 ## 从0到可运行项目路线
 
 语言教学采用有限发布包：每门语言围绕一个结课项目，从环境、核心语法、依赖管理、标准库、第三方库、测试、配置、日志、README 和 demo transcript 逐步推进。文章数量服务于可复现项目，不以单纯篇数作为完成标准。
