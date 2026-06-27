@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">环境变量和 PATH 继承模型</title>
+  <desc id="desc">父进程把环境快照传给子进程，PATH 决定命令查找目录。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker></defs>
+  <rect x="20" y="20" width="880" height="320" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="80" y="80" width="260" height="150" rx="16" fill="#dbeafe" stroke="#60a5fa"/>
+  <text x="210" y="115" text-anchor="middle" font-size="20" font-family="Arial">父进程 shell</text>
+  <text x="210" y="148" text-anchor="middle" font-size="15" font-family="Arial">PATH=/usr/local/bin:/usr/bin</text>
+  <text x="210" y="173" text-anchor="middle" font-size="15" font-family="Arial">OS_LAB_DEMO=visible</text>
+  <text x="210" y="198" text-anchor="middle" font-size="15" font-family="Arial">command search</text>
+  <rect x="580" y="80" width="260" height="150" rx="16" fill="#dcfce7" stroke="#22c55e"/>
+  <text x="710" y="115" text-anchor="middle" font-size="20" font-family="Arial">子进程 python3</text>
+  <text x="710" y="148" text-anchor="middle" font-size="15" font-family="Arial">收到环境快照</text>
+  <text x="710" y="173" text-anchor="middle" font-size="15" font-family="Arial">读取 os.environ</text>
+  <text x="710" y="198" text-anchor="middle" font-size="15" font-family="Arial">修改不会自动回写父进程</text>
+  <line x1="340" y1="155" x2="570" y2="155" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="455" y="135" text-anchor="middle" font-size="16" font-family="Arial" fill="#1d4ed8">fork/exec 时传入 env</text>
+  <text x="460" y="285" text-anchor="middle" font-size="17" font-family="Arial" fill="#334155">PATH 是查找规则；环境是进程启动上下文；继承方向默认向下</text>
+</svg>
