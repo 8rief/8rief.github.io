@@ -35,7 +35,7 @@ permalink: /computer-science-teaching/
 | --- | --- | --- | --- | --- |
 | 1 | Git 基础与协作 | [Git 心智模型：working tree、index、commit 和 repository](/computer-science-teaching/2026/06/28/git-working-tree-index-commit.html) | [Git repo lab、release tag 和协作检查表](/computer-science-teaching/2026/06/28/git-release-tag-gitignore-capstone.html) | 版本控制、协作、冲突解决和发布前检查 |
 | 2 | OS/Linux 进程与文件 | [Linux 文件系统：路径、目录项、inode 和 stat 怎么连起来](/computer-science-teaching/2026/06/28/linux-filesystem-path-inode-stat.html) | [本地 system observer 报告](/computer-science-teaching/2026/06/28/linux-system-observer-capstone.html) | 文件、进程、权限、信号、文本流水线 |
-| 3 | SQL 实用开发（待写） | SQLite-first SQL 语法与开发场景 | 本地 SQL 报表 CLI | 查询、增删改、事务、参数化查询、导入导出 |
+| 3 | SQL 实用开发 | [SQLite schema 与表设计](/computer-science-teaching/2026/06/28/sql-sqlite-schema-table-primary-key.html) | [SQLite 报表 CLI、索引证据和发布检查](/computer-science-teaching/2026/06/28/sql-report-cli-index-explain-capstone.html) | 查询、增删改、JOIN、聚合、事务、参数化查询、导入导出 |
 
 ### 从0到可运行项目
 
@@ -72,6 +72,7 @@ permalink: /computer-science-teaching/
 | Go | 本地服务健康检查器 | module、struct/interface/error、JSON/CSV、net/http、context、goroutine/channel、CLI、测试、优雅关闭 |
 | C++ | 本地文件索引 CLI + API | CMake/Ninja、FetchContent、CLI11、nlohmann/json、CSV、Catch2、spdlog、cpp-httplib、README/demo |
 | Rust | 日志洞察 CLI + 本地 API | Cargo、ownership/borrowing、Result/Option、thiserror/anyhow、serde、clap、测试、clippy、Tokio/Axum、tracing |
+| SQL 实用开发 | 本地 SQLite 报表 CLI | schema、CRUD、JOIN、GROUP BY、事务、迁移、参数化查询、CSV/JSON 导入导出、EXPLAIN QUERY PLAN |
 | 深度学习基础 | XOR toy classifier baseline → MLP | NumPy/tensor、线性代数、autograd、概率统计、优化、baseline、Dataset/DataLoader、checkpoint、可复现实验 |
 | Linux 网络与授权安全基础 | 本地 HTTP 服务 + service map + hardening report | interface/route/socket/resolver、ss/curl、loopback service map、HTTP headers、path boundary、subprocess boundary |
 
