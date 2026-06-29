@@ -56,14 +56,14 @@ buglab::running_mean(std::vector<int, std::allocator<int> > const&)
 src/debug_lab.cpp:33
 ```
 
-这说明 Debug 构建里的符号可以回到源码位置。当前主机没有安装 gdb，所以本包不声称已验证 gdb 单步调试；后续如果安装 gdb，可以基于同一个 lab 继续扩展。
+这说明 Debug 构建里的符号可以回到源码位置。本文 lab 环境未验证 gdb 单步调试，所以本包不把 gdb 作为已验收内容；后续如果安装 gdb，可以基于同一个 lab 继续扩展。
 
 ## 常见错误
 
 1. **只保留最终二进制，不保留 transcript。** 以后无法证明构建环境和命令。
 2. **把 sanitizer 失败当发布失败。** 这里故意触发 sanitizer 来保留教学证据；真实项目中应修复后再发布。
 3. **不区分工具用途。** CTest 验证行为，sanitizer 捕捉内存/UB，time 观察耗时，nm/addr2line 查符号。
-4. **没有明确未覆盖项。** gdb 当前不可用，应明确边界，而不是假装验证过。
+4. **没有明确未覆盖项。** gdb 单步调试未在本文 lab 中验证，应明确边界，避免把未验证步骤写成结论。
 
 ## 练习或延伸
 

@@ -24,7 +24,7 @@ tags: [cpp, debugging, compiler-warnings, cmake, teaching]
 
 ## 先修知识
 
-需要会运行 `cmake`、`ninja` 和 C++ 编译命令。本文不要求会 gdb；当前 lab 主机也没有安装 gdb。
+需要会运行 `cmake`、`ninja` 和 C++ 编译命令。本文不要求会 gdb；本文 lab 环境未验证 gdb 单步调试。
 
 ## 核心模型
 
