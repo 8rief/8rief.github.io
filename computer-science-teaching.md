@@ -36,6 +36,7 @@ permalink: /computer-science-teaching/
 | 1 | Git 基础与协作 | [Git 心智模型：working tree、index、commit 和 repository](/computer-science-teaching/2026/06/28/git-working-tree-index-commit.html) | [Git repo lab、release tag 和协作检查表](/computer-science-teaching/2026/06/28/git-release-tag-gitignore-capstone.html) | 版本控制、协作、冲突解决和发布前检查 |
 | 2 | OS/Linux 进程与文件 | [Linux 文件系统：路径、目录项、inode 和 stat 怎么连起来](/computer-science-teaching/2026/06/28/linux-filesystem-path-inode-stat.html) | [本地 system observer 报告](/computer-science-teaching/2026/06/28/linux-system-observer-capstone.html) | 文件、进程、权限、信号、文本流水线 |
 | 3 | SQL 实用开发 | [SQLite schema 与表设计](/computer-science-teaching/2026/06/28/sql-sqlite-schema-table-primary-key.html) | [SQLite 报表 CLI、索引证据和发布检查](/computer-science-teaching/2026/06/28/sql-report-cli-index-explain-capstone.html) | 查询、增删改、JOIN、聚合、事务、参数化查询、导入导出 |
+| 4 | 调试与构建工具 | [编译告警和构建类型](/computer-science-teaching/2026/06/29/debug-build-warnings-build-types.html) | [调试和构建发布检查表](/computer-science-teaching/2026/06/29/debug-build-capstone-release-checklist.html) | warnings、CMake/Ninja、最小复现、sanitizer、CTest、日志、计时和符号证据 |
 
 ### 从0到可运行项目
 
