@@ -38,6 +38,7 @@ permalink: /computer-science-teaching/
 | 3 | SQL 实用开发 | [SQLite schema 与表设计](/computer-science-teaching/2026/06/28/sql-sqlite-schema-table-primary-key.html) | [SQLite 报表 CLI、索引证据和发布检查](/computer-science-teaching/2026/06/28/sql-report-cli-index-explain-capstone.html) | 查询、增删改、JOIN、聚合、事务、参数化查询、导入导出 |
 | 4 | 调试与构建工具 | [编译告警和构建类型](/computer-science-teaching/2026/06/29/debug-build-warnings-build-types.html) | [调试和构建发布检查表](/computer-science-teaching/2026/06/29/debug-build-capstone-release-checklist.html) | warnings、CMake/Ninja、最小复现、sanitizer、CTest、日志、计时和符号证据 |
 | 5 | 网络基础（非安全） | [网络栈基础：interface、route、socket 和 loopback 如何连起来](/computer-science-teaching/2026/06/30/network-stack-interface-route-socket.html) | [本地 network observer 报告](/computer-science-teaching/2026/06/30/network-observer-service-map-capstone.html) | interface、IP/CIDR、route、DNS、TCP、UDP、HTTP、timing 和服务观测 |
+| 6 | 软件工程项目结构 | [需求切片：先把“要做一个项目”改写成可验收行为](/computer-science-teaching/2026/06/30/software-requirement-slice-contract.html) | [release-ready 小项目骨架](/computer-science-teaching/2026/06/30/software-project-skeleton-capstone.html) | 需求切片、目录结构、模块边界、配置、依赖、测试、文档和发布检查 |
 
 ### 从0到可运行项目
 
