@@ -37,9 +37,10 @@ permalink: /computer-science-teaching/
 | 2 | OS/Linux 进程与文件 | [Linux 文件系统：路径、目录项、inode 和 stat 怎么连起来](/computer-science-teaching/2026/06/28/linux-filesystem-path-inode-stat.html) | [本地 system observer 报告](/computer-science-teaching/2026/06/28/linux-system-observer-capstone.html) | 文件、进程、权限、信号、文本流水线 |
 | 3 | Linux CLI 与 Shell 自动化 | [工作目录、命令和输出边界](/computer-science-teaching/2026/07/01/linux-cli-workspace-command-contract.html) | [本地日志报告自动化](/computer-science-teaching/2026/07/01/linux-shell-automation-capstone-log-report.html) | 管道、变量引用、脚本参数、find 批处理、awk/sed 报告、测试和 transcript |
 | 4 | SQL 实用开发 | [SQLite schema 与表设计](/computer-science-teaching/2026/06/28/sql-sqlite-schema-table-primary-key.html) | [SQLite 报表 CLI、索引证据和发布检查](/computer-science-teaching/2026/06/28/sql-report-cli-index-explain-capstone.html) | 查询、增删改、JOIN、聚合、事务、参数化查询、导入导出 |
-| 5 | 调试与构建工具 | [编译告警和构建类型](/computer-science-teaching/2026/06/29/debug-build-warnings-build-types.html) | [调试和构建发布检查表](/computer-science-teaching/2026/06/29/debug-build-capstone-release-checklist.html) | warnings、CMake/Ninja、最小复现、sanitizer、CTest、日志、计时和符号证据 |
-| 6 | 网络基础（非安全） | [网络栈基础：interface、route、socket 和 loopback 如何连起来](/computer-science-teaching/2026/06/30/network-stack-interface-route-socket.html) | [本地 network observer 报告](/computer-science-teaching/2026/06/30/network-observer-service-map-capstone.html) | interface、IP/CIDR、route、DNS、TCP、UDP、HTTP、timing 和服务观测 |
-| 7 | 软件工程项目结构 | [需求切片：先把“要做一个项目”改写成可验收行为](/computer-science-teaching/2026/06/30/software-requirement-slice-contract.html) | [release-ready 小项目骨架](/computer-science-teaching/2026/06/30/software-project-skeleton-capstone.html) | 需求切片、目录结构、模块边界、配置、依赖、测试、文档和发布检查 |
+| 5 | 数据库与缓存开发实践 | [数据库从表结构开始](/computer-science-teaching/2026/07/01/db-cache-schema-migration-user-version.html) | [库存订单系统、报表缓存和 SVG 展示](/computer-science-teaching/2026/07/01/db-cache-capstone-inventory-report.html) | schema 迁移、参数化 CRUD、索引计划、事务下单、cache-aside、TTL、失效、测试和 transcript |
+| 6 | 调试与构建工具 | [编译告警和构建类型](/computer-science-teaching/2026/06/29/debug-build-warnings-build-types.html) | [调试和构建发布检查表](/computer-science-teaching/2026/06/29/debug-build-capstone-release-checklist.html) | warnings、CMake/Ninja、最小复现、sanitizer、CTest、日志、计时和符号证据 |
+| 7 | 网络基础（非安全） | [网络栈基础：interface、route、socket 和 loopback 如何连起来](/computer-science-teaching/2026/06/30/network-stack-interface-route-socket.html) | [本地 network observer 报告](/computer-science-teaching/2026/06/30/network-observer-service-map-capstone.html) | interface、IP/CIDR、route、DNS、TCP、UDP、HTTP、timing 和服务观测 |
+| 8 | 软件工程项目结构 | [需求切片：先把“要做一个项目”改写成可验收行为](/computer-science-teaching/2026/06/30/software-requirement-slice-contract.html) | [release-ready 小项目骨架](/computer-science-teaching/2026/06/30/software-project-skeleton-capstone.html) | 需求切片、目录结构、模块边界、配置、依赖、测试、文档和发布检查 |
 
 ### 从0到可运行项目
 
@@ -53,6 +54,7 @@ permalink: /computer-science-teaching/
 | 6 | C++ 库项目 | [CMake FetchContent 和第三方库边界](/computer-science-teaching/2026/06/25/cpp-cmake-fetchcontent-library-boundary.html) | [C++ 项目收尾](/computer-science-teaching/2026/06/25/cpp-project-readme-demo-release-checklist.html) | CLI11、nlohmann/json、CSV、Catch2、spdlog、cpp-httplib |
 | 7 | 最小 Web 全栈 | [浏览器、HTTP、服务器和 JSON 文件怎么连起来](/computer-science-teaching/2026/07/01/web-fullstack-request-response-boundary.html) | [从空目录跑起一个最小任务面板](/computer-science-teaching/2026/07/01/web-fullstack-capstone-task-board.html) | HTML 表单、DOM、fetch、Node HTTP、JSON 持久化、输入校验、Node test 和 smoke transcript |
 | 8 | 数据处理与可视化 | [从 CSV 到报告的最小流水线](/computer-science-teaching/2026/07/01/data-pipeline-csv-to-report-model.html) | [销售数据报表和 SVG 图表](/computer-science-teaching/2026/07/01/data-processing-visualization-capstone.html) | CSV、字段校验、拒收行、JSON 摘要、SQLite 汇总、SVG 图表、测试和 transcript |
+| 9 | 数据库与缓存开发实践 | [数据库从表结构开始](/computer-science-teaching/2026/07/01/db-cache-schema-migration-user-version.html) | [库存订单系统、报表缓存和 SVG 展示](/computer-science-teaching/2026/07/01/db-cache-capstone-inventory-report.html) | SQLite schema、CRUD、索引计划、事务、报表聚合、cache-aside、TTL、失效、测试和 transcript |
 
 ### 机制与实验基础
 
@@ -63,7 +65,7 @@ permalink: /computer-science-teaching/
 
 ### 写作和学习原则
 
-语言、SQL 和开发基础都按“需求 → 用法 → 原理 → 实操”组织。原理不是省略，而是从真实需求出发，用来解释为什么更快、更好用、更安全、更容易维护，或者为什么某个库/API 这样设计。
+语言、SQL 和开发基础都按“需求 → 用法 → 原理 → 实操”组织。原理从真实需求出发，用来解释为什么更快、更好用、更安全、更容易维护，或者为什么某个库/API 这样设计。
 
 ## 从0到可运行项目路线
 
@@ -79,6 +81,7 @@ permalink: /computer-science-teaching/
 | C++ | 本地文件索引 CLI + API | CMake/Ninja、FetchContent、CLI11、nlohmann/json、CSV、Catch2、spdlog、cpp-httplib、README/demo |
 | Rust | 日志洞察 CLI + 本地 API | Cargo、ownership/borrowing、Result/Option、thiserror/anyhow、serde、clap、测试、clippy、Tokio/Axum、tracing |
 | SQL 实用开发 | 本地 SQLite 报表 CLI | schema、CRUD、JOIN、GROUP BY、事务、迁移、参数化查询、CSV/JSON 导入导出、EXPLAIN QUERY PLAN |
+| 数据库与缓存开发实践 | 库存订单系统 + 报表缓存 | SQLite schema 迁移、参数化 CRUD、索引计划、事务扣库存、cache-aside、TTL、显式失效、JSON/SVG/Markdown 报告 |
 | 深度学习基础 | XOR toy classifier baseline → MLP | NumPy/tensor、线性代数、autograd、概率统计、优化、baseline、Dataset/DataLoader、checkpoint、可复现实验 |
 | Linux 网络与授权安全基础 | 本地 HTTP 服务 + service map + hardening report | interface/route/socket/resolver、ss/curl、loopback service map、HTTP headers、path boundary、subprocess boundary |
 
