@@ -57,13 +57,15 @@ permalink: /computer-science-teaching/
 | 8 | 数据处理与可视化 | [从 CSV 到报告的最小流水线](/computer-science-teaching/2026/07/01/data-pipeline-csv-to-report-model.html) | [销售数据报表和 SVG 图表](/computer-science-teaching/2026/07/01/data-processing-visualization-capstone.html) | CSV、字段校验、拒收行、JSON 摘要、SQLite 汇总、SVG 图表、测试和 transcript |
 | 9 | 数据库与缓存开发实践 | [数据库从表结构开始](/computer-science-teaching/2026/07/01/db-cache-schema-migration-user-version.html) | [库存订单系统、报表缓存和 SVG 展示](/computer-science-teaching/2026/07/01/db-cache-capstone-inventory-report.html) | SQLite schema、CRUD、索引计划、事务、报表聚合、cache-aside、TTL、失效、测试和 transcript |
 | 10 | 容器化与本地部署 | [容器第一课](/computer-science-teaching/2026/07/01/container-image-container-model.html) | [HTTP 服务容器化并留下部署证据](/computer-science-teaching/2026/07/01/container-deployment-capstone-release-evidence.html) | Dockerfile、image/container、端口发布、环境变量、bind mount、healthcheck、Compose、发布证据 |
+| 11 | 深度学习/AI 工程入门 | [AI 工程从问题和 baseline 开始](/computer-science-teaching/2026/07/01/ai-engineering-problem-data-baseline-split.html) | [从 baseline 到 NumPy MLP 的可复现 AI 工程包](/computer-science-teaching/2026/07/01/ai-engineering-capstone-numpy-mlp-release.html) | 数据切分、baseline、NumPy 张量、softmax、反向传播、gradient check、训练循环、评估、checkpoint、model card |
 
 ### 机制与实验基础
 
 | 顺序 | 发布包 | 从哪里开始 | 收尾项目 | 说明 |
 | --- | --- | --- | --- | --- |
 | 1 | 深度学习基础 | [先把可复现实验跑起来](/computer-science-teaching/2026/06/25/deep-learning-route-reproducible-lab.html) | [从 XOR baseline 到 MLP 对比](/computer-science-teaching/2026/06/25/deep-learning-capstone-xor-mlp-comparison.html) | 先跑 baseline，再解释 tensor、autograd、loss、训练循环 |
-| 2 | Linux 网络与授权安全基础 | [Linux 网络模型](/computer-science-teaching/2026/06/27/linux-network-model-interface-route-socket.html) | [本地服务地图、路径边界和加固报告](/computer-science-teaching/2026/06/27/linux-network-security-capstone-checklist.html) | 已完成，但后续安全专题暂缓；可作为网络基础补充 |
+| 2 | 深度学习/AI 工程入门 | [AI 工程从问题和 baseline 开始](/computer-science-teaching/2026/07/01/ai-engineering-problem-data-baseline-split.html) | [从 baseline 到 NumPy MLP 的可复现 AI 工程包](/computer-science-teaching/2026/07/01/ai-engineering-capstone-numpy-mlp-release.html) | CPU-only NumPy lab；baseline 对比、梯度检查、训练曲线、checkpoint、model card 和 transcript |
+| 3 | Linux 网络与授权安全基础 | [Linux 网络模型](/computer-science-teaching/2026/06/27/linux-network-model-interface-route-socket.html) | [本地服务地图、路径边界和加固报告](/computer-science-teaching/2026/06/27/linux-network-security-capstone-checklist.html) | 已完成，但后续安全专题暂缓；可作为网络基础补充 |
 
 ### 写作和学习原则
 
@@ -85,6 +87,7 @@ permalink: /computer-science-teaching/
 | SQL 实用开发 | 本地 SQLite 报表 CLI | schema、CRUD、JOIN、GROUP BY、事务、迁移、参数化查询、CSV/JSON 导入导出、EXPLAIN QUERY PLAN |
 | 数据库与缓存开发实践 | 库存订单系统 + 报表缓存 | SQLite schema 迁移、参数化 CRUD、索引计划、事务扣库存、cache-aside、TTL、显式失效、JSON/SVG/Markdown 报告 |
 | 容器化与本地部署 | Python HTTP 服务容器化 | Dockerfile、build context、`.dockerignore`、端口发布、环境变量、bind mount、HEALTHCHECK、logs/inspect、Compose、部署报告 |
+| 深度学习/AI 工程入门 | NumPy MLP spiral classifier | 固定 seed、数据切分、majority/linear baseline、softmax/cross entropy、手写反向传播、gradient check、训练历史、checkpoint、model card |
 | 深度学习基础 | XOR toy classifier baseline → MLP | NumPy/tensor、线性代数、autograd、概率统计、优化、baseline、Dataset/DataLoader、checkpoint、可复现实验 |
 | Linux 网络与授权安全基础 | 本地 HTTP 服务 + service map + hardening report | interface/route/socket/resolver、ss/curl、loopback service map、HTTP headers、path boundary、subprocess boundary |
 
