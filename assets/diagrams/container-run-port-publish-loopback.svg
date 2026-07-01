@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="300" viewBox="0 0 940 300" role="img" aria-labelledby="title desc">
+<title id="title">容器服务如何被宿主机访问：端口发布和 loopback 边界</title>
+<desc id="desc">Browser/curl -&gt; 127.0.0.1:18080 -&gt; Docker port publish -&gt; Container :8080 -&gt; Python service</desc>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text{font-family:Arial,&quot;Microsoft YaHei&quot;,sans-serif}.title{font-size:24px;font-weight:700;fill:#0f172a}.node{fill:#ffffff;stroke:#0891b2;stroke-width:2}.label{font-size:14px;fill:#0f172a;font-weight:700}.arrow{stroke:#64748b;stroke-width:2;marker-end:url(#arrow)}.note{font-size:13px;fill:#475569}</style>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#64748b"/></marker></defs>
+<text class="title" x="30" y="42">容器服务如何被宿主机访问：端口发布和 loopback 边界</text>
+<rect class="node" x="30" y="112" width="150" height="70" rx="14"/>
+<text class="label" x="105.0" y="144" text-anchor="middle">Browser/curl</text>
+<line class="arrow" x1="184" y1="147.0" x2="198" y2="147.0"/>
+<rect class="node" x="204" y="112" width="150" height="70" rx="14"/>
+<text class="label" x="279.0" y="144" text-anchor="middle">127.0.0.1:18080</text>
+<line class="arrow" x1="358" y1="147.0" x2="372" y2="147.0"/>
+<rect class="node" x="378" y="112" width="150" height="70" rx="14"/>
+<text class="label" x="453.0" y="144" text-anchor="middle">Docker port publish</text>
+<line class="arrow" x1="532" y1="147.0" x2="546" y2="147.0"/>
+<rect class="node" x="552" y="112" width="150" height="70" rx="14"/>
+<text class="label" x="627.0" y="144" text-anchor="middle">Container :8080</text>
+<line class="arrow" x1="706" y1="147.0" x2="720" y2="147.0"/>
+<rect class="node" x="726" y="112" width="150" height="70" rx="14"/>
+<text class="label" x="801.0" y="144" text-anchor="middle">Python service</text>
+<text class="note" x="30" y="260">Source: local Docker lab; concepts cross-checked against official Docker documentation.</text>
+</svg>
