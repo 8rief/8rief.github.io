@@ -52,6 +52,7 @@ permalink: /computer-science-teaching/
 | 5 | C++ 基础工程 | [C++ 程序如何从源码变成可执行文件](/computer-science-teaching/2026/06/24/cpp-build-pipeline-source-to-executable.html) | [GoogleTest 和可复现实验](/computer-science-teaching/2026/06/24/cpp-googletest-reproducible-tests.html) | 编译链接、头文件、RAII、所有权、CMake、测试 |
 | 6 | C++ 库项目 | [CMake FetchContent 和第三方库边界](/computer-science-teaching/2026/06/25/cpp-cmake-fetchcontent-library-boundary.html) | [C++ 项目收尾](/computer-science-teaching/2026/06/25/cpp-project-readme-demo-release-checklist.html) | CLI11、nlohmann/json、CSV、Catch2、spdlog、cpp-httplib |
 | 7 | 最小 Web 全栈 | [浏览器、HTTP、服务器和 JSON 文件怎么连起来](/computer-science-teaching/2026/07/01/web-fullstack-request-response-boundary.html) | [从空目录跑起一个最小任务面板](/computer-science-teaching/2026/07/01/web-fullstack-capstone-task-board.html) | HTML 表单、DOM、fetch、Node HTTP、JSON 持久化、输入校验、Node test 和 smoke transcript |
+| 8 | 数据处理与可视化 | [从 CSV 到报告的最小流水线](/computer-science-teaching/2026/07/01/data-pipeline-csv-to-report-model.html) | [销售数据报表和 SVG 图表](/computer-science-teaching/2026/07/01/data-processing-visualization-capstone.html) | CSV、字段校验、拒收行、JSON 摘要、SQLite 汇总、SVG 图表、测试和 transcript |
 
 ### 机制与实验基础
 
