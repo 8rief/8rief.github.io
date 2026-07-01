@@ -21,7 +21,24 @@ permalink: /mathematical-foundations/
 
 ## 建议学习路径
 
-当前数学基础主要围绕有限域和有限域序列展开。默认列表按发布时间倒序展示，学习时建议按下面顺序：
+本栏目现在分成两条可直接学习的路线：一条服务于 AI、算法和数据工程中的基础数学，一条服务于有限域、序列和计算代数。默认文章列表仍按发布时间倒序展示；学习时建议按下面顺序读。
+
+### 路线 A：AI、算法和数据工程数学基础
+
+| 阶段 | 先读 | 目的 |
+| --- | --- | --- |
+| 1 | [向量和矩阵第一课：dot、norm 和 projection](/mathematical-foundations/2026/07/01/math-ai-vector-matrix-dot-norm.html) | 建立样本、参数、方向、长度和线性变换的共同语言 |
+| 2 | [线性方程和最小二乘：从无解系统到可解释拟合](/mathematical-foundations/2026/07/01/math-ai-linear-system-least-squares.html) | 理解现实数据无法精确满足方程时如何定义最佳近似 |
+| 3 | [特征值、协方差和 PCA：找出数据变化最大的方向](/mathematical-foundations/2026/07/01/math-ai-eigen-covariance-pca.html) | 把协方差、特征向量和降维连接起来 |
+| 4 | [概率、期望和方差：把随机实验变成可比较数字](/mathematical-foundations/2026/07/01/math-ai-probability-expectation-variance.html) | 区分单次随机结果、长期均值和波动规模 |
+| 5 | [Bayes 公式和混淆矩阵：阳性结果为什么还要看先验](/mathematical-foundations/2026/07/01/math-ai-bayes-confusion-metrics.html) | 学会把先验、检测质量和评估指标放在同一张表里解释 |
+| 6 | [导数和梯度：用 finite difference 检查方向](/mathematical-foundations/2026/07/01/math-ai-gradient-finite-difference.html) | 用数值检查建立对梯度方向的可信理解 |
+| 7 | [链式法则到反向传播：一层 tanh 网络怎么传回梯度](/mathematical-foundations/2026/07/01/math-ai-chain-rule-backprop.html) | 从计算图角度理解反向传播 |
+| 8 | [梯度下降和学习率：为什么一步一步能靠近最优点](/mathematical-foundations/2026/07/01/math-ai-gradient-descent-learning-rate.html) | 理解优化循环、学习率和 loss 曲线 |
+| 9 | [数值稳定性：softmax 为什么要减最大值](/mathematical-foundations/2026/07/01/math-ai-numerical-stability-softmax-logsumexp.html) | 学会用等价变换避免浮点溢出 |
+| 10 | [结课项目：用数学基础做一个可验证 logistic baseline](/mathematical-foundations/2026/07/01/math-ai-capstone-logistic-baseline.html) | 把向量、概率、梯度、优化和评估合成一个可验证 baseline |
+
+### 路线 B：有限域、有限域序列和计算代数
 
 | 阶段 | 先读 | 目的 |
 | --- | --- | --- |
@@ -32,8 +49,6 @@ permalink: /mathematical-foundations/
 | 5 | [迹、范数与对偶基](/mathematical-foundations/2026/06/25/finite-fields-trace-norm-dual-basis.html) | 连接扩域元素、线性代数和后续编码/密码应用 |
 | 6 | [Möbius反演](/mathematical-foundations/2026/06/25/finite-fields-mobius-irreducible-counts.html)、[分圆多项式与本原多项式](/mathematical-foundations/2026/06/25/finite-fields-cyclotomic-primitive-polynomials.html)、[Berlekamp算法](/mathematical-foundations/2026/06/25/finite-fields-berlekamp-factorization.html) | 学会数不可约、多项式分解和构造工具 |
 | 7 | [有限域上的线性递推](/mathematical-foundations/2026/06/25/finite-fields-linear-recurrence.html)、[m序列](/mathematical-foundations/2026/06/25/finite-fields-m-sequence.html)、[互相关特性](/mathematical-foundations/2026/06/25/finite-fields-sequence-correlation.html) | 连接到序列、周期和相关性 |
-
-后续如果扩展数学基础，应优先补线性代数、概率统计和数论中直接服务于算法、系统或深度学习的部分，避免脱离需求的大而全理论铺陈。
 
 ## 已归入本栏目
 

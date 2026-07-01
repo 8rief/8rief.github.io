@@ -39,3 +39,14 @@ permalink: /posts/
 - [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
 {% endfor %}
 {% endif %}
+
+## 数学基础
+
+{% assign math_posts = site.posts | where: "column", "mathematical-foundations" %}
+{% if math_posts.size == 0 %}
+暂无文章。
+{% else %}
+{% for post in math_posts %}
+- [{{ post.title }}]({{ post.url | relative_url }}) — {{ post.date | date: "%Y-%m-%d" }}
+{% endfor %}
+{% endif %}
