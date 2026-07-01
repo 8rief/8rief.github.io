@@ -35,10 +35,11 @@ permalink: /computer-science-teaching/
 | --- | --- | --- | --- | --- |
 | 1 | Git 基础与协作 | [Git 心智模型：working tree、index、commit 和 repository](/computer-science-teaching/2026/06/28/git-working-tree-index-commit.html) | [Git repo lab、release tag 和协作检查表](/computer-science-teaching/2026/06/28/git-release-tag-gitignore-capstone.html) | 版本控制、协作、冲突解决和发布前检查 |
 | 2 | OS/Linux 进程与文件 | [Linux 文件系统：路径、目录项、inode 和 stat 怎么连起来](/computer-science-teaching/2026/06/28/linux-filesystem-path-inode-stat.html) | [本地 system observer 报告](/computer-science-teaching/2026/06/28/linux-system-observer-capstone.html) | 文件、进程、权限、信号、文本流水线 |
-| 3 | SQL 实用开发 | [SQLite schema 与表设计](/computer-science-teaching/2026/06/28/sql-sqlite-schema-table-primary-key.html) | [SQLite 报表 CLI、索引证据和发布检查](/computer-science-teaching/2026/06/28/sql-report-cli-index-explain-capstone.html) | 查询、增删改、JOIN、聚合、事务、参数化查询、导入导出 |
-| 4 | 调试与构建工具 | [编译告警和构建类型](/computer-science-teaching/2026/06/29/debug-build-warnings-build-types.html) | [调试和构建发布检查表](/computer-science-teaching/2026/06/29/debug-build-capstone-release-checklist.html) | warnings、CMake/Ninja、最小复现、sanitizer、CTest、日志、计时和符号证据 |
-| 5 | 网络基础（非安全） | [网络栈基础：interface、route、socket 和 loopback 如何连起来](/computer-science-teaching/2026/06/30/network-stack-interface-route-socket.html) | [本地 network observer 报告](/computer-science-teaching/2026/06/30/network-observer-service-map-capstone.html) | interface、IP/CIDR、route、DNS、TCP、UDP、HTTP、timing 和服务观测 |
-| 6 | 软件工程项目结构 | [需求切片：先把“要做一个项目”改写成可验收行为](/computer-science-teaching/2026/06/30/software-requirement-slice-contract.html) | [release-ready 小项目骨架](/computer-science-teaching/2026/06/30/software-project-skeleton-capstone.html) | 需求切片、目录结构、模块边界、配置、依赖、测试、文档和发布检查 |
+| 3 | Linux CLI 与 Shell 自动化 | [工作目录、命令和输出边界](/computer-science-teaching/2026/07/01/linux-cli-workspace-command-contract.html) | [本地日志报告自动化](/computer-science-teaching/2026/07/01/linux-shell-automation-capstone-log-report.html) | 管道、变量引用、脚本参数、find 批处理、awk/sed 报告、测试和 transcript |
+| 4 | SQL 实用开发 | [SQLite schema 与表设计](/computer-science-teaching/2026/06/28/sql-sqlite-schema-table-primary-key.html) | [SQLite 报表 CLI、索引证据和发布检查](/computer-science-teaching/2026/06/28/sql-report-cli-index-explain-capstone.html) | 查询、增删改、JOIN、聚合、事务、参数化查询、导入导出 |
+| 5 | 调试与构建工具 | [编译告警和构建类型](/computer-science-teaching/2026/06/29/debug-build-warnings-build-types.html) | [调试和构建发布检查表](/computer-science-teaching/2026/06/29/debug-build-capstone-release-checklist.html) | warnings、CMake/Ninja、最小复现、sanitizer、CTest、日志、计时和符号证据 |
+| 6 | 网络基础（非安全） | [网络栈基础：interface、route、socket 和 loopback 如何连起来](/computer-science-teaching/2026/06/30/network-stack-interface-route-socket.html) | [本地 network observer 报告](/computer-science-teaching/2026/06/30/network-observer-service-map-capstone.html) | interface、IP/CIDR、route、DNS、TCP、UDP、HTTP、timing 和服务观测 |
+| 7 | 软件工程项目结构 | [需求切片：先把“要做一个项目”改写成可验收行为](/computer-science-teaching/2026/06/30/software-requirement-slice-contract.html) | [release-ready 小项目骨架](/computer-science-teaching/2026/06/30/software-project-skeleton-capstone.html) | 需求切片、目录结构、模块边界、配置、依赖、测试、文档和发布检查 |
 
 ### 从0到可运行项目
 
