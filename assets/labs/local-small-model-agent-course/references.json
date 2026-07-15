@@ -1,0 +1,9 @@
+[
+  {"topic":"Agent 的推理与行动循环","title":"ReAct: Synergizing Reasoning and Acting in Language Models","url":"https://arxiv.org/abs/2210.03629"},
+  {"topic":"Transformers 工具定义与工具回传","title":"Hugging Face Transformers Tool use","url":"https://huggingface.co/docs/transformers/en/chat_extras"},
+  {"topic":"Chat model 消息模板","title":"Hugging Face Transformers Chat templates","url":"https://huggingface.co/docs/transformers/en/chat_templating"},
+  {"topic":"确定性与采样生成参数","title":"Hugging Face Transformers Generation strategies","url":"https://huggingface.co/docs/transformers/generation_strategies"},
+  {"topic":"LoRA 低秩适配","title":"Hugging Face PEFT LoRA conceptual guide","url":"https://huggingface.co/docs/peft/main/conceptual_guides/lora"},
+  {"topic":"Qwen3-0.6B 模型和用法","title":"Qwen3-0.6B model card","url":"https://huggingface.co/Qwen/Qwen3-0.6B"},
+  {"topic":"CUDA 异步、同步和显存统计","title":"PyTorch CUDA semantics","url":"https://docs.pytorch.org/docs/stable/notes/cuda.html"}
+]

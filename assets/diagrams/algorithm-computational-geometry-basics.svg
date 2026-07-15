@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-label="computational geometry basics diagram">
+<rect width="920" height="260" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#334155"/></marker></defs>
+<rect x="38" y="80" width="155" height="86" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="116" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">向量叉积</text>
+<text x="116" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">方向判断</text>
+<line x1="193" y1="123.0" x2="220" y2="123.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="238" y="80" width="155" height="86" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="316" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">线段相交</text>
+<text x="316" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">方向 + 包围盒</text>
+<line x1="393" y1="123.0" x2="420" y2="123.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="438" y="80" width="155" height="86" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="516" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">排序点集</text>
+<text x="516" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">按 x 再 y</text>
+<line x1="593" y1="123.0" x2="620" y2="123.0" stroke="#334155" stroke-width="2.3" marker-end="url(#arrow)"/>
+<rect x="638" y="80" width="155" height="86" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="716" y="114" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">凸包边界</text>
+<text x="716" y="140" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">维护左转</text>
+</svg>

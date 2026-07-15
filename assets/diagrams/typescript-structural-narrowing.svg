@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img" aria-labelledby="title desc">
+  <title id="title">TypeScript structural typing and narrowing workflow</title>
+  <desc id="desc">Unknown event-like objects are checked by structural contracts, narrowed by discriminated union kind, handled exhaustively, then compiled and tested.</desc>
+  <defs>
+    <style>
+      text { font-family: Arial, 'Microsoft YaHei', sans-serif; fill: #172033; }
+      .box { fill: #f6f8fb; stroke: #315c9f; stroke-width: 2; rx: 16; }
+      .accent { fill: #e9f3ff; stroke: #1f6feb; stroke-width: 2; rx: 16; }
+      .gate { fill: #fff8e8; stroke: #b7791f; stroke-width: 2; rx: 16; }
+      .ok { fill: #edf8f0; stroke: #2f855a; stroke-width: 2; rx: 16; }
+      .arrow { stroke: #44546a; stroke-width: 2.5; marker-end: url(#arrow); fill: none; }
+      .small { font-size: 17px; }
+      .title { font-weight: 700; font-size: 22px; }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M 0 0 L 12 6 L 0 12 z" fill="#44546a" /></marker>
+  </defs>
+  <rect x="25" y="35" width="160" height="100" class="box" />
+  <text x="105" y="75" text-anchor="middle" class="title">输入对象</text><text x="105" y="104" text-anchor="middle" class="small">来自接口、CLI</text><text x="105" y="128" text-anchor="middle" class="small">或其他模块</text>
+  <rect x="245" y="35" width="180" height="100" class="accent" />
+  <text x="335" y="72" text-anchor="middle" class="title">结构类型</text><text x="335" y="102" text-anchor="middle" class="small">字段形状兼容</text><text x="335" y="126" text-anchor="middle" class="small">即可赋值</text>
+  <rect x="485" y="35" width="190" height="100" class="gate" />
+  <text x="580" y="72" text-anchor="middle" class="title">判别联合</text><text x="580" y="102" text-anchor="middle" class="small">kind 缩小类型</text><text x="580" y="126" text-anchor="middle" class="small">访问对应字段</text>
+  <rect x="735" y="35" width="205" height="100" class="ok" />
+  <text x="837" y="72" text-anchor="middle" class="title">穷尽处理</text><text x="837" y="102" text-anchor="middle" class="small">assertNever</text><text x="837" y="126" text-anchor="middle" class="small">新增分支会报错</text>
+  <path d="M 185 85 L 245 85" class="arrow" /><path d="M 425 85 L 485 85" class="arrow" /><path d="M 675 85 L 735 85" class="arrow" />
+  <rect x="80" y="220" width="210" height="105" class="box" /><text x="185" y="258" text-anchor="middle" class="title">tsc --noEmit</text><text x="185" y="288" text-anchor="middle" class="small">只做类型检查</text><text x="185" y="313" text-anchor="middle" class="small">不产生 JS</text>
+  <rect x="385" y="220" width="210" height="105" class="box" /><text x="490" y="258" text-anchor="middle" class="title">tsc -p</text><text x="490" y="288" text-anchor="middle" class="small">生成 dist/</text><text x="490" y="313" text-anchor="middle" class="small">运行测试和示例</text>
+  <rect x="690" y="220" width="210" height="105" class="box" /><text x="795" y="258" text-anchor="middle" class="title">compile-fail</text><text x="795" y="288" text-anchor="middle" class="small">故意破坏类型</text><text x="795" y="313" text-anchor="middle" class="small">保存预期错误</text>
+  <path d="M 185 135 C 185 170 185 185 185 220" class="arrow" /><path d="M 580 135 C 530 170 500 185 490 220" class="arrow" /><path d="M 837 135 C 835 170 810 185 795 220" class="arrow" />
+  <text x="490" y="385" text-anchor="middle" class="small">核心主线：用结构类型接住对象形状，用 narrowing 获得安全字段访问，用穷尽检查防止新增事件漏处理。</text>
+</svg>

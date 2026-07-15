@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="360" viewBox="0 0 980 360" role="img" aria-labelledby="title desc">
+  <title id="title">Binary search half-open invariant</title>
+  <desc id="desc">Binary search maintains false zone, unknown half-open interval, and true zone until left equals right.</desc>
+  <defs><style>text { font-family: Arial, 'Microsoft YaHei', sans-serif; fill: #172033; }.false { fill: #fce8e6; stroke: #d93025; stroke-width: 2; }.unknown { fill: #e8f0fe; stroke: #1a73e8; stroke-width: 2; }.true { fill: #e6f4ea; stroke: #188038; stroke-width: 2; }.mark { stroke: #202124; stroke-width: 2; }.arrow { stroke: #44546a; stroke-width: 2.5; marker-end: url(#arrow); fill: none; }.title { font-size: 22px; font-weight: 700; }.small { font-size: 17px; }</style><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M 0 0 L 12 6 L 0 12 z" fill="#44546a" /></marker></defs>
+  <text x="490" y="40" text-anchor="middle" class="title">lower_bound 的半开区间不变量</text>
+  <rect x="80" y="100" width="220" height="80" class="false" /><rect x="300" y="100" width="360" height="80" class="unknown" /><rect x="660" y="100" width="240" height="80" class="true" />
+  <text x="190" y="135" text-anchor="middle" class="title">[0, left)</text><text x="190" y="163" text-anchor="middle" class="small">已知 values[i] &lt; target</text>
+  <text x="480" y="135" text-anchor="middle" class="title">[left, right)</text><text x="480" y="163" text-anchor="middle" class="small">还不知道答案在哪</text>
+  <text x="780" y="135" text-anchor="middle" class="title">[right, n)</text><text x="780" y="163" text-anchor="middle" class="small">已知 values[i] ≥ target</text>
+  <line x1="300" y1="85" x2="300" y2="200" class="mark" /><line x1="660" y1="85" x2="660" y2="200" class="mark" /><line x1="480" y1="85" x2="480" y2="200" stroke="#1a73e8" stroke-width="2" stroke-dasharray="8 6" />
+  <text x="300" y="225" text-anchor="middle" class="small">left</text><text x="480" y="225" text-anchor="middle" class="small">mid</text><text x="660" y="225" text-anchor="middle" class="small">right</text>
+  <path d="M 480 245 C 420 265 360 265 315 245" class="arrow" /><text x="385" y="292" text-anchor="middle" class="small">pred(mid) 为真：答案不在 mid 右边，right = mid</text>
+  <path d="M 500 245 C 570 265 625 265 650 245" class="arrow" /><text x="625" y="325" text-anchor="middle" class="small">pred(mid) 为假：mid 也不是答案，left = mid + 1</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<title id="title">可复现实验路线</title>
+<desc id="desc">可复现实验路线 的结构示意图。</desc>
+<rect width="920" height="420" fill="#f8fafc"/>
+<text x="40" y="42" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">可复现实验路线</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="160" y1="155.0" x2="190" y2="155.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="310" y1="155.0" x2="340" y2="155.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="480" y1="155.0" x2="520" y2="155.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="640" y1="155.0" x2="670" y2="155.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="40" y="120" width="120" height="70" rx="14" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="100.0" y="145.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">环境</text>
+<text x="100.0" y="167.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">versions</text>
+<rect x="190" y="120" width="120" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="250.0" y="145.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">数据</text>
+<text x="250.0" y="167.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">seed+split</text>
+<rect x="340" y="120" width="140" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="410.0" y="145.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">baseline</text>
+<text x="410.0" y="167.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">majority/linear</text>
+<rect x="520" y="120" width="120" height="70" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="580.0" y="145.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">模型</text>
+<text x="580.0" y="167.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">MLP</text>
+<rect x="670" y="120" width="160" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="750.0" y="145.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">证据</text>
+<text x="750.0" y="167.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">history+metrics</text>
+</svg>

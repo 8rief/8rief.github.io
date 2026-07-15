@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="680" viewBox="0 0 1200 680" role="img" aria-labelledby="title desc">
+  <title id="title">本地小模型 Agent 的可检查控制循环</title>
+  <desc id="desc">用户任务先进入任务契约和控制器，再分别访问 RAG、工具执行器、状态和可选本地 Qwen。结果通过证据合成后进入 held-out 评测和失败分类。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#315a7d"/>
+    </marker>
+    <style>
+      .title{font:700 30px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#17324d}
+      .subtitle{font:400 16px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#49657d}
+      .box-title{font:700 20px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#17324d}
+      .box-text{font:400 15px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#36536b}
+      .small{font:400 14px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#49657d}
+      .line{stroke:#315a7d;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#6c879e;stroke-width:2.5;stroke-dasharray:8 7;fill:none;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1200" height="680" rx="28" fill="#f5f9fc"/>
+  <text x="600" y="50" text-anchor="middle" class="title">本地 Agent：先固定系统边界，再接入小模型</text>
+  <text x="600" y="80" text-anchor="middle" class="subtitle">每个箭头都要有输入、输出、trace 和失败类型</text>
+
+  <rect x="55" y="135" width="180" height="96" rx="16" fill="#e9f2fb" stroke="#6c9ac4" stroke-width="2"/>
+  <text x="145" y="172" text-anchor="middle" class="box-title">用户任务</text>
+  <text x="145" y="201" text-anchor="middle" class="box-text">问题 / 目标 / 约束</text>
+
+  <rect x="310" y="120" width="250" height="126" rx="16" fill="#fff4de" stroke="#d7a64b" stroke-width="2"/>
+  <text x="435" y="158" text-anchor="middle" class="box-title">任务契约 + Controller</text>
+  <text x="435" y="188" text-anchor="middle" class="box-text">选择检索、工具或回答</text>
+  <text x="435" y="215" text-anchor="middle" class="small">input → plan → observation → final</text>
+
+  <path d="M235 183 H298" class="line"/>
+
+  <rect x="650" y="105" width="205" height="100" rx="16" fill="#e8f7ef" stroke="#54a478" stroke-width="2"/>
+  <text x="752" y="142" text-anchor="middle" class="box-title">RAG</text>
+  <text x="752" y="170" text-anchor="middle" class="box-text">top-k 来源 + 相关阈值</text>
+
+  <rect x="925" y="105" width="220" height="100" rx="16" fill="#f2ecfb" stroke="#8b6fb4" stroke-width="2"/>
+  <text x="1035" y="142" text-anchor="middle" class="box-title">本地 Qwen（可选）</text>
+  <text x="1035" y="170" text-anchor="middle" class="box-text">base / LoRA / RAG+LoRA</text>
+
+  <rect x="650" y="255" width="205" height="112" rx="16" fill="#fdecec" stroke="#c46d6d" stroke-width="2"/>
+  <text x="752" y="293" text-anchor="middle" class="box-title">工具执行器</text>
+  <text x="752" y="322" text-anchor="middle" class="box-text">白名单 / 类型 / 多余字段</text>
+  <text x="752" y="347" text-anchor="middle" class="small">验证通过后才执行</text>
+
+  <rect x="925" y="255" width="220" height="112" rx="16" fill="#eaf5f7" stroke="#5e9aa3" stroke-width="2"/>
+  <text x="1035" y="293" text-anchor="middle" class="box-title">有界状态 / 记忆</text>
+  <text x="1035" y="322" text-anchor="middle" class="box-text">当前目标 + 最近对话</text>
+  <text x="1035" y="347" text-anchor="middle" class="small">持久化不等于保留一切</text>
+
+  <path d="M560 158 H638" class="line"/>
+  <path d="M855 155 H913" class="dash"/>
+  <path d="M560 200 C605 210 605 311 638 311" class="line"/>
+  <path d="M560 220 C650 235 820 310 913 311" class="line"/>
+
+  <rect x="310" y="420" width="250" height="112" rx="16" fill="#e9f2fb" stroke="#6c9ac4" stroke-width="2"/>
+  <text x="435" y="458" text-anchor="middle" class="box-title">证据合成与来源</text>
+  <text x="435" y="487" text-anchor="middle" class="box-text">answer + source ids + trace</text>
+  <text x="435" y="512" text-anchor="middle" class="small">无证据时明确拒答</text>
+
+  <path d="M650 335 C590 355 535 385 485 410" class="line"/>
+  <path d="M925 335 C770 375 650 410 570 455" class="dash"/>
+  <path d="M752 205 C700 380 610 430 570 456" class="line"/>
+
+  <rect x="650" y="430" width="495" height="120" rx="16" fill="#fff4de" stroke="#d7a64b" stroke-width="2"/>
+  <text x="897" y="468" text-anchor="middle" class="box-title">held-out 评测 + Failure Taxonomy</text>
+  <text x="897" y="497" text-anchor="middle" class="box-text">retrieval_miss / wrong_tool / bad_arguments</text>
+  <text x="897" y="525" text-anchor="middle" class="box-text">unsupported_claim / state_error</text>
+
+  <path d="M560 476 H638" class="line"/>
+  <path d="M897 550 C820 625 520 625 440 545" class="dash"/>
+  <text x="690" y="631" text-anchor="middle" class="small">只修复主要失败层，然后重跑完整冻结集</text>
+</svg>

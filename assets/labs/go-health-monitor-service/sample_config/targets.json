@@ -1,0 +1,5 @@
+[
+  {"name": "demo-ok", "url": "http://127.0.0.1:18191/ok"},
+  {"name": "demo-fail", "url": "http://127.0.0.1:18191/fail"},
+  {"name": "demo-slow", "url": "http://127.0.0.1:18191/slow"}
+]

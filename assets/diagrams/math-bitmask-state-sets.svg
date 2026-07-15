@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="360" viewBox="0 0 900 360" role="img" aria-labelledby="title desc">
+  <title id="title">bitmask 表示有限状态集合</title>
+  <desc id="desc">用五位二进制表示列集合，并通过补集和lowbit找到N-Queens下一行候选。</desc>
+  <rect width="900" height="360" fill="#f8fafc"/>
+  <style>.h{font:700 22px sans-serif;fill:#0f172a}.t{font:16px sans-serif;fill:#1e293b}.s{font:14px monospace;fill:#334155}.b{fill:#fff;stroke:#334155;stroke-width:2;rx:12;ry:12}.on{fill:#2563eb}.off{fill:#e2e8f0}.bad{fill:#f97316}.arrow{stroke:#2563eb;stroke-width:3;fill:none;marker-end:url(#m)}</style>
+  <defs><marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/></marker></defs>
+  <text x="36" y="42" class="h">bitmask：把有限集合压进一个整数</text>
+  <rect class="b" x="50" y="80" width="250" height="190"/>
+  <text x="76" y="114" class="t">列集合 {0,1,2,3,4}</text>
+  <g transform="translate(78,145)">
+    <rect class="off" x="0" y="0" width="34" height="34"/><rect class="on" x="42" y="0" width="34" height="34"/><rect class="off" x="84" y="0" width="34" height="34"/><rect class="on" x="126" y="0" width="34" height="34"/><rect class="off" x="168" y="0" width="34" height="34"/>
+    <text class="s" x="11" y="58">0</text><text class="s" x="53" y="58">1</text><text class="s" x="95" y="58">2</text><text class="s" x="137" y="58">3</text><text class="s" x="179" y="58">4</text>
+  </g>
+  <text x="76" y="240" class="s">cur = 01010</text>
+  <rect class="b" x="330" y="80" width="250" height="190"/>
+  <text x="356" y="114" class="t">攻击集合合并</text>
+  <text x="356" y="154" class="s">blocked = cur | left | right</text>
+  <text x="356" y="192" class="s">valid = full &amp; ~blocked</text>
+  <text x="356" y="232" class="s">full = 11111</text>
+  <rect class="b" x="610" y="80" width="240" height="190"/>
+  <text x="636" y="114" class="t">取一个候选</text>
+  <text x="636" y="154" class="s">valid = 00001</text>
+  <text x="636" y="192" class="s">lowbit = valid &amp; -valid</text>
+  <text x="636" y="232" class="s">column = 0</text>
+  <path class="arrow" d="M300 175 H325"/><path class="arrow" d="M580 175 H605"/>
+  <text x="50" y="320" class="t">用途：N-Queens、状态压缩DP、集合枚举、GPU搜索任务都用同一个思想。</text>
+</svg>

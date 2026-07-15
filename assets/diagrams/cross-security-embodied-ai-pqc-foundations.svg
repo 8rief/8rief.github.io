@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+  <title id="title">具身智能安全与抗量子密码的共同系统边界</title>
+  <desc id="desc">图中展示真实世界、传感器、状态估计、世界模型、规划控制和执行器构成的闭环，旁边标出通信、身份、固件、日志与数据链路中的抗量子迁移边界。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f4f6f" />
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .box { fill: #ffffff; stroke: #2f4f6f; stroke-width: 2; rx: 14; }
+      .world { fill: #eef7ed; stroke: #2f6f3e; stroke-width: 2; rx: 16; }
+      .pqc { fill: #fff5e6; stroke: #9a5a00; stroke-width: 2; rx: 14; }
+      .guard { fill: #f1f5ff; stroke: #4a63a8; stroke-width: 2; rx: 14; }
+      .arrow { stroke: #2f4f6f; stroke-width: 2.4; fill: none; marker-end: url(#arrow); }
+      .warn { stroke: #9a5a00; stroke-width: 2; fill: none; stroke-dasharray: 7 5; marker-end: url(#arrow); }
+      .title { font: 700 24px 'Noto Sans CJK SC', 'Microsoft YaHei', Arial, sans-serif; fill: #102033; }
+      .label { font: 600 17px 'Noto Sans CJK SC', 'Microsoft YaHei', Arial, sans-serif; fill: #102033; }
+      .small { font: 14px 'Noto Sans CJK SC', 'Microsoft YaHei', Arial, sans-serif; fill: #334155; }
+      .tiny { font: 12px 'Noto Sans CJK SC', 'Microsoft YaHei', Arial, sans-serif; fill: #475569; }
+    </style>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1100" height="620" />
+  <text class="title" x="44" y="46">从真实世界闭环看具身智能安全，再把抗量子密码放进系统边界</text>
+
+  <rect class="world" x="46" y="104" width="160" height="100" />
+  <text class="label" x="74" y="143">真实世界</text>
+  <text class="small" x="68" y="172">人、物体、地面</text>
+  <text class="small" x="68" y="193">照明、碰撞、遮挡</text>
+
+  <rect class="box" x="274" y="88" width="170" height="132" />
+  <text class="label" x="316" y="125">传感器</text>
+  <text class="small" x="296" y="155">相机 / 深度</text>
+  <text class="small" x="296" y="178">IMU / LiDAR</text>
+  <text class="small" x="296" y="201">力/触觉/编码器</text>
+
+  <rect class="box" x="510" y="88" width="180" height="132" />
+  <text class="label" x="552" y="125">状态估计</text>
+  <text class="small" x="536" y="155">时间同步</text>
+  <text class="small" x="536" y="178">坐标系变换</text>
+  <text class="small" x="536" y="201">定位 / SLAM</text>
+
+  <rect class="box" x="756" y="88" width="180" height="132" />
+  <text class="label" x="807" y="125">世界模型</text>
+  <text class="small" x="780" y="155">地图 / 语义</text>
+  <text class="small" x="780" y="178">对象 / 任务状态</text>
+  <text class="small" x="780" y="201">不确定性</text>
+
+  <rect class="box" x="756" y="310" width="180" height="132" />
+  <text class="label" x="796" y="347">规划与策略</text>
+  <text class="small" x="780" y="377">路径 / 抓取</text>
+  <text class="small" x="780" y="400">VLA / 规则 / MPC</text>
+  <text class="small" x="780" y="423">任务约束</text>
+
+  <rect class="guard" x="510" y="310" width="180" height="132" />
+  <text class="label" x="545" y="347">安全监控</text>
+  <text class="small" x="536" y="377">速度/力限制</text>
+  <text class="small" x="536" y="400">运行时约束</text>
+  <text class="small" x="536" y="423">人机协作边界</text>
+
+  <rect class="box" x="274" y="310" width="170" height="132" />
+  <text class="label" x="318" y="347">执行器</text>
+  <text class="small" x="296" y="377">电机 / 关节</text>
+  <text class="small" x="296" y="400">夹爪 / 底盘</text>
+  <text class="small" x="296" y="423">制动 / 急停</text>
+
+  <path class="arrow" d="M206 154 H274" />
+  <path class="arrow" d="M444 154 H510" />
+  <path class="arrow" d="M690 154 H756" />
+  <path class="arrow" d="M846 220 V310" />
+  <path class="arrow" d="M756 376 H690" />
+  <path class="arrow" d="M510 376 H444" />
+  <path class="arrow" d="M274 376 C205 376 138 302 126 204" />
+
+  <rect class="pqc" x="56" y="500" width="988" height="74" />
+  <text class="label" x="84" y="531">抗量子迁移关注的密码边界</text>
+  <text class="small" x="84" y="558">TLS/SSH/VPN、设备身份、固件签名、OTA 更新、日志完整性、供应链签名、长期保密数据的密钥协商</text>
+
+  <path class="warn" d="M154 500 C210 458 250 431 274 404" />
+  <path class="warn" d="M550 500 C548 470 558 447 580 442" />
+  <path class="warn" d="M850 500 C868 470 878 444 868 442" />
+
+  <text class="tiny" x="64" y="598">读图方法：具身安全先看传感器—估计—规划—控制—物理反馈；密码安全先看身份、通信、更新和证据链能否长期可信。</text>
+</svg>

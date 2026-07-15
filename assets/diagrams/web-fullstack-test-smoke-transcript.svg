@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="220" viewBox="0 0 920 220" role="img" aria-labelledby="title desc">
+<title id="title">web fullstack test smoke transcript</title>
+<desc id="desc">web fullstack test smoke transcript 的四步流程示意图。</desc>
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<style>text{font-family:Arial,"Microsoft YaHei",sans-serif}.h{font-size:18px;font-weight:700;fill:#0f172a}.b{font-size:14px;fill:#334155}.box{fill:#ffffff;stroke:#7c3aed;stroke-width:2}.arrow{stroke:#64748b;stroke-width:2.5;marker-end:url(#m)}</style>
+<defs><marker id="m" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L10,3 L0,6 Z" fill="#64748b"/></marker></defs>
+<rect class="box" x="40" y="78" rx="14" width="190" height="86"/>
+<text class="h" x="58" y="112">Node test</text>
+<text class="b" x="58" y="138">断言 API 行为</text>
+<line class="arrow" x1="238" y1="121.0" x2="257" y2="121.0"/>
+<rect class="box" x="265" y="78" rx="14" width="190" height="86"/>
+<text class="h" x="283" y="112">Smoke</text>
+<text class="b" x="283" y="138">真实 HTTP 链路</text>
+<line class="arrow" x1="463" y1="121.0" x2="482" y2="121.0"/>
+<rect class="box" x="490" y="78" rx="14" width="190" height="86"/>
+<text class="h" x="508" y="112">Transcript</text>
+<text class="b" x="508" y="138">命令和环境</text>
+<line class="arrow" x1="688" y1="121.0" x2="707" y2="121.0"/>
+<rect class="box" x="715" y="78" rx="14" width="190" height="86"/>
+<text class="h" x="733" y="112">证据</text>
+<text class="b" x="733" y="138">报告可复查</text>
+</svg>

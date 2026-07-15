@@ -1,0 +1,3 @@
+JSON keeps structured summaries.
+CSV is useful for spreadsheet inspection.
+Logging records the chosen input and outputs.

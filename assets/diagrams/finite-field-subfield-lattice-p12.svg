@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420">
+  <rect width="920" height="420" fill="#f8fafc"/>
+  <text x="40" y="52" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">GF(p¹²) 的子域格图</text>
+  <g fill="none" stroke="#64748b" stroke-width="3">
+    <path d="M460 95 L310 170 L230 255 L460 340"/>
+    <path d="M460 95 L610 170 L690 255 L460 340"/>
+    <path d="M310 170 L460 255 L610 170"/>
+    <path d="M230 255 L460 255 L690 255"/>
+  </g>
+  <g style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;" font-size="18" text-anchor="middle">
+    <rect x="370" y="70" width="180" height="50" rx="14" fill="#dbeafe" stroke="#2563eb"/><text x="460" y="102">GF(p¹²)</text>
+    <rect x="225" y="145" width="170" height="50" rx="14" fill="#dcfce7" stroke="#16a34a"/><text x="310" y="177">GF(p⁴)</text>
+    <rect x="525" y="145" width="170" height="50" rx="14" fill="#dcfce7" stroke="#16a34a"/><text x="610" y="177">GF(p⁶)</text>
+    <rect x="145" y="230" width="170" height="50" rx="14" fill="#fef3c7" stroke="#d97706"/><text x="230" y="262">GF(p²)</text>
+    <rect x="375" y="230" width="170" height="50" rx="14" fill="#fef3c7" stroke="#d97706"/><text x="460" y="262">GF(p³)</text>
+    <rect x="375" y="315" width="170" height="50" rx="14" fill="#fee2e2" stroke="#dc2626"/><text x="460" y="347">GF(p)</text>
+  </g>
+  <text x="100" y="395" font-size="16" fill="#475569" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">规则：GF(p^a) ⊆ GF(p^b) 当且仅当 a | b；交对应 gcd，生成域对应 lcm。</text>
+</svg>

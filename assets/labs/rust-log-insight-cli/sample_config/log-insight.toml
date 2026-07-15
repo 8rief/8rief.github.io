@@ -1,0 +1,2 @@
+error_rate_warning = 0.25
+slow_latency_ms = 50

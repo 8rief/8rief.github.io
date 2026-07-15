@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="300" viewBox="0 0 920 300">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#445"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="920" height="300" fill="#ffffff"/>
+  <text x="460.0" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#1f2d16">Release-ready 小项目骨架</text>
+  <text x="460.0" y="86" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#5a674d">从需求到可复跑证据：小项目结构闭环</text>
+  <line x1="176.0" y1="158.0" x2="172.0" y2="158.0" stroke="#445" stroke-width="2" marker-end="url(#arrow)"/><line x1="318.0" y1="158.0" x2="314.0" y2="158.0" stroke="#445" stroke-width="2" marker-end="url(#arrow)"/><line x1="460.0" y1="158.0" x2="456.0" y2="158.0" stroke="#445" stroke-width="2" marker-end="url(#arrow)"/><line x1="602.0" y1="158.0" x2="598.0" y2="158.0" stroke="#445" stroke-width="2" marker-end="url(#arrow)"/><line x1="744.0" y1="158.0" x2="740.0" y2="158.0" stroke="#445" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="40.0" y="132" width="130" height="52" rx="12" fill="#f2f7ec" stroke="#5a7d2b" stroke-width="2"/><text x="105.0" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#243515">需求切片</text><rect x="182.0" y="132" width="130" height="52" rx="12" fill="#f2f7ec" stroke="#5a7d2b" stroke-width="2"/><text x="247.0" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#243515">目录结构</text><rect x="324.0" y="132" width="130" height="52" rx="12" fill="#f2f7ec" stroke="#5a7d2b" stroke-width="2"/><text x="389.0" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#243515">模块边界</text><rect x="466.0" y="132" width="130" height="52" rx="12" fill="#f2f7ec" stroke="#5a7d2b" stroke-width="2"/><text x="531.0" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#243515">配置边界</text><rect x="608.0" y="132" width="130" height="52" rx="12" fill="#f2f7ec" stroke="#5a7d2b" stroke-width="2"/><text x="673.0" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#243515">测试证据</text><rect x="750.0" y="132" width="130" height="52" rx="12" fill="#f2f7ec" stroke="#5a7d2b" stroke-width="2"/><text x="815.0" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#243515">发布检查</text>
+</svg>

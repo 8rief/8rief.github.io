@@ -1,0 +1,15 @@
+{
+  "seed": 314159,
+  "device": "cpu",
+  "epochs": 8,
+  "checkpoint_epoch": 4,
+  "learning_rate": 0.4,
+  "momentum": 0.9,
+  "scheduler_step_size": 4,
+  "scheduler_gamma": 0.5,
+  "feature_scale": 5.0,
+  "grid_values": [-5, -4, -3, -2, -1, 1, 2, 3, 4, 5],
+  "train_per_class": 30,
+  "val_per_class": 8,
+  "task_name": "linearly_separable_2d_sign_task"
+}

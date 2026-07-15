@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<title id="title">Loss 和优化循环</title>
+<desc id="desc">Loss 和优化循环 的结构示意图。</desc>
+<rect width="920" height="420" fill="#f8fafc"/>
+<text x="40" y="42" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">Loss 和优化循环</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="180" y1="180.0" x2="230" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="360" y1="180.0" x2="410" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="520" y1="180.0" x2="570" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="700" y1="180.0" x2="750" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="880" y1="180.0" x2="230" y2="180.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="70" y="150" width="110" height="60" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="125.0" y="180.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">batch</text>
+<rect x="230" y="150" width="130" height="60" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="295.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">model</text>
+<text x="295.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">logits</text>
+<rect x="410" y="150" width="110" height="60" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="465.0" y="180.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">loss</text>
+<rect x="570" y="150" width="130" height="60" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="635.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">backward</text>
+<text x="635.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">grad</text>
+<rect x="750" y="150" width="130" height="60" rx="14" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="815.0" y="170.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">optimizer</text>
+<text x="815.0" y="192.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">step</text>
+</svg>

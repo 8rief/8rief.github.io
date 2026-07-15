@@ -1,0 +1,10 @@
+{"id":"eval-001","question":"nvidia-smi 能看到显卡后，是否就能编译 CUDA C++？","answer":"不能。nvidia-smi 只证明 driver 和 GPU 可见，不证明 nvcc 已安装，需要再执行 nvcc --version 检查编译器。","expected_source":"nvidia-driver","keywords":["nvcc","不证明"],"failure_type":"boundary_overclaim"}
+{"id":"eval-002","question":"CUDA 编译器和 PyTorch 自带的运行库是一回事吗？","answer":"不是。nvcc 是 CUDA C++ 编译器，PyTorch wheel 可以带 CUDA runtime；有 runtime 不等于有完整 nvcc toolchain。","expected_source":"cuda-compiler","keywords":["nvcc","runtime"],"failure_type":"concept_confusion"}
+{"id":"eval-003","question":"vector_add_ok 能不能证明 GPU 加速？","answer":"不能。vector_add_ok 是 host/device 流程和结果的正确性证据，不是性能证据；加速结论还需要公平的 CPU baseline 和明确计时边界。","expected_source":"vector-add-proof","keywords":["不是","性能"],"failure_type":"boundary_overclaim"}
+{"id":"eval-004","question":"低秩适配器为什么比全参数微调省？","answer":"LoRA 冻结基座权重，只训练低秩适配器，因此可训练参数、梯度和优化器状态更少。","expected_source":"lora-boundary","keywords":["冻结","可训练参数"],"failure_type":"concept_confusion"}
+{"id":"eval-005","question":"文档会经常变，应该先改知识库还是重训模型？","answer":"应先用 RAG 并更新索引，因为可变事实适合放在外部知识中，不必为单条文档变化重训模型。","expected_source":"rag-boundary","keywords":["RAG","索引"],"failure_type":"method_choice"}
+{"id":"eval-006","question":"模型输出了 JSON 工具参数，为什么还不能直接执行？","answer":"模型输出是不可信输入。执行前必须检查工具白名单、参数类型、必需字段、长度和额外字段。","expected_source":"tool-boundary","keywords":["白名单","类型"],"failure_type":"bad_arguments"}
+{"id":"eval-007","question":"Agent 为什么不应无限保留所有对话？","answer":"无界历史会增加上下文长度、延迟和隐私风险。应限制最近对话，只把确认过的稳定事实持久化。","expected_source":"agent-memory","keywords":["上下文","隐私"],"failure_type":"state_error"}
+{"id":"eval-008","question":"回归集怎么帮助我优化 Agent？","answer":"在优化前冻结 held-out 回归集，按检索、工具、参数、无证据断言和状态错误分类失败，修复后重跑全集防止回归。","expected_source":"held-out-eval","keywords":["冻结","失败"],"failure_type":"eval_design"}
+{"id":"eval-009","question":"换成别的显卡后，Agent 的任务定义和评测是否也要重写？","answer":"不需要。任务定义、评测和证据边界不变；应根据显存调整模型、sequence length、batch 和量化。","expected_source":"hardware-scope","keywords":["不变","显存"],"failure_type":"hardware_misfit"}
+{"id":"eval-010","question":"请为我查找火星气象的实时数据。","answer":"证据不足：当前本地知识库没有火星实时气象数据，不应猜测。","expected_source":null,"keywords":["证据不足"],"failure_type":"unsupported_claim"}

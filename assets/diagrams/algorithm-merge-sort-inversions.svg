@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="230" viewBox="0 0 920 230" role="img" aria-label="algorithm diagram">
+<rect width="920" height="230" fill="#f8fafc"/>
+<defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#334155"/></marker></defs>
+<rect x="40" y="70" width="170" height="85" rx="14" fill="#dbeafe" stroke="#2563eb"/>
+<text x="125" y="104" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">拆分</text>
+<text x="125" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">left / right</text>
+<line x1="210" y1="112" x2="260" y2="112" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="260" y="70" width="170" height="85" rx="14" fill="#dcfce7" stroke="#16a34a"/>
+<text x="345" y="104" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">递归排序</text>
+<text x="345" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">两边内部已解决</text>
+<line x1="430" y1="112" x2="480" y2="112" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="480" y="70" width="170" height="85" rx="14" fill="#fef3c7" stroke="#d97706"/>
+<text x="565" y="104" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">合并</text>
+<text x="565" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">双指针输出有序</text>
+<line x1="650" y1="112" x2="700" y2="112" stroke="#334155" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="700" y="70" width="170" height="85" rx="14" fill="#fee2e2" stroke="#dc2626"/>
+<text x="785" y="104" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">计数</text>
+<text x="785" y="130" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">right[j] 跳过 m-i 个左元素</text>
+</svg>

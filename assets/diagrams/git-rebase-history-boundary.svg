@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">Git rebase 历史边界模型</title>
+  <desc id="desc">topic 提交从旧 main 上重放到新 main 上，提交哈希发生变化。</desc>
+  <rect x="20" y="20" width="880" height="320" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g font-family="Arial" font-size="15" text-anchor="middle">
+    <text x="210" y="65" font-size="18">rebase 前</text>
+    <circle cx="110" cy="150" r="24" fill="#dbeafe" stroke="#60a5fa"/><text x="110" y="155">A</text>
+    <circle cx="200" cy="150" r="24" fill="#dbeafe" stroke="#60a5fa"/><text x="200" y="155">B</text>
+    <circle cx="290" cy="95" r="24" fill="#dcfce7" stroke="#22c55e"/><text x="290" y="100">T</text>
+    <circle cx="290" cy="205" r="24" fill="#fef3c7" stroke="#f59e0b"/><text x="290" y="210">C</text>
+    <line x1="134" y1="150" x2="176" y2="150" stroke="#334155" stroke-width="3"/><line x1="224" y1="140" x2="266" y2="105" stroke="#334155" stroke-width="3"/><line x1="224" y1="160" x2="266" y2="195" stroke="#334155" stroke-width="3"/>
+    <text x="700" y="65" font-size="18">rebase 后</text>
+    <circle cx="570" cy="150" r="24" fill="#dbeafe" stroke="#60a5fa"/><text x="570" y="155">A</text>
+    <circle cx="660" cy="150" r="24" fill="#dbeafe" stroke="#60a5fa"/><text x="660" y="155">B</text>
+    <circle cx="750" cy="150" r="24" fill="#fef3c7" stroke="#f59e0b"/><text x="750" y="155">C</text>
+    <circle cx="840" cy="150" r="24" fill="#dcfce7" stroke="#22c55e"/><text x="840" y="155">T'</text>
+    <line x1="594" y1="150" x2="636" y2="150" stroke="#334155" stroke-width="3"/><line x1="684" y1="150" x2="726" y2="150" stroke="#334155" stroke-width="3"/><line x1="774" y1="150" x2="816" y2="150" stroke="#334155" stroke-width="3"/>
+  </g>
+  <text x="460" y="300" text-anchor="middle" font-size="17" font-family="Arial" fill="#334155">rebase 会重新创建提交；适合整理尚未共享的本地 topic 历史</text>
+</svg>

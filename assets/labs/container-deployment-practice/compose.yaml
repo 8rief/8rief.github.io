@@ -1,0 +1,19 @@
+services:
+  web:
+    build:
+      context: .
+    image: container-deployment-practice:local
+    container_name: container-deployment-practice-web
+    environment:
+      APP_NAME: compose-container-lab
+      PORT: "8080"
+      DATA_DIR: /data
+    ports:
+      - "127.0.0.1:18080:8080"
+    volumes:
+      - ./data/runtime:/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import json,urllib.request; r=urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2); data=json.loads(r.read().decode()); raise SystemExit(0 if data.get('status') == 'ok' else 1)"]
+      interval: 5s
+      timeout: 2s
+      retries: 5

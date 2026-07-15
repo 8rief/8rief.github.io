@@ -1,0 +1,5 @@
+order_id,customer,item,unit_price_cents,quantity,discount_pct
+o-001,alice,notebook,500,3,0
+o-001,alice,pen,120,5,10
+o-002,bob,keyboard,8500,1,15
+o-003,alice,mouse,2500,2,0

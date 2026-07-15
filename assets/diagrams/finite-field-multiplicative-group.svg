@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360">
+  <rect width="920" height="360" fill="#f8fafc"/>
+  <text x="40" y="52" font-size="28" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">非零元素构成乘法群</text>
+  <circle cx="450" cy="180" r="108" fill="#ecfeff" stroke="#0891b2" stroke-width="3"/>
+  <text x="416" y="88" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">1</text>
+  <text x="518" y="124" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">α</text>
+  <text x="535" y="230" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">α²</text>
+  <text x="410" y="286" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">...</text>
+  <text x="300" y="210" font-size="18" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">α^(q-2)</text>
+  <text x="374" y="184" font-size="21" font-weight="700" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">F_q^× 有 q-1 个元素</text>
+  <text x="356" y="214" font-size="16" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">本原元能生成整圈</text>
+  <rect x="70" y="125" width="180" height="110" rx="16" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="112" y="158" font-size="20" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">0 不在群里</text>
+  <text x="98" y="188" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">因为 0 没有乘法逆元</text>
+  <rect x="665" y="125" width="190" height="110" rx="16" fill="#fef3c7" stroke="#d97706"/>
+  <text x="708" y="158" font-size="20" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">元素阶</text>
+  <text x="696" y="188" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">最小 t 使 a^t=1</text>
+  <text x="696" y="215" font-size="15" style="font-family: Arial, 'Noto Sans CJK SC', 'Microsoft YaHei', sans-serif;">一定整除 q-1</text>
+</svg>

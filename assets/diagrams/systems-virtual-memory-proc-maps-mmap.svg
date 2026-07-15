@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="230" viewBox="0 0 920 230" role="img" aria-labelledby="title desc">
+<title>虚拟内存观察：/proc/maps、mmap 和 copy-on-write</title>
+<desc>虚拟地址空间 -&gt; page size -&gt; mmap映射页 -&gt; fork后写入 -&gt; 父进程保持7</desc>
+<rect x="0" y="0" width="920" height="230" fill="#ffffff"/>
+<text x="40" y="42" font-family="Arial, Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#202124">虚拟内存观察：/proc/maps、mmap 和 copy-on-write</text>
+<rect x="40" y="110" width="150" height="64" rx="14" fill="#e8f0fe" stroke="#5f6368" stroke-width="1.2"/>
+<text x="115.0" y="137" text-anchor="middle" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#202124">虚拟地址空间</text>
+<line x1="196" y1="142.0" x2="210" y2="142.0" stroke="#5f6368" stroke-width="2"/>
+<path d="M 210 142.0 L 202 137.0 L 202 147.0 Z" fill="#5f6368"/>
+<rect x="218" y="110" width="150" height="64" rx="14" fill="#e6f4ea" stroke="#5f6368" stroke-width="1.2"/>
+<text x="293.0" y="137" text-anchor="middle" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#202124">page size</text>
+<line x1="374" y1="142.0" x2="388" y2="142.0" stroke="#5f6368" stroke-width="2"/>
+<path d="M 388 142.0 L 380 137.0 L 380 147.0 Z" fill="#5f6368"/>
+<rect x="396" y="110" width="150" height="64" rx="14" fill="#fef7e0" stroke="#5f6368" stroke-width="1.2"/>
+<text x="471.0" y="137" text-anchor="middle" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#202124">mmap映射页</text>
+<line x1="552" y1="142.0" x2="566" y2="142.0" stroke="#5f6368" stroke-width="2"/>
+<path d="M 566 142.0 L 558 137.0 L 558 147.0 Z" fill="#5f6368"/>
+<rect x="574" y="110" width="150" height="64" rx="14" fill="#fce8e6" stroke="#5f6368" stroke-width="1.2"/>
+<text x="649.0" y="137" text-anchor="middle" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#202124">fork后写入</text>
+<line x1="730" y1="142.0" x2="744" y2="142.0" stroke="#5f6368" stroke-width="2"/>
+<path d="M 744 142.0 L 736 137.0 L 736 147.0 Z" fill="#5f6368"/>
+<rect x="752" y="110" width="150" height="64" rx="14" fill="#f3e8fd" stroke="#5f6368" stroke-width="1.2"/>
+<text x="827.0" y="137" text-anchor="middle" font-family="Arial, Microsoft YaHei, sans-serif" font-size="14" fill="#202124">父进程保持7</text>
+<text x="40" y="205" font-family="Arial, Microsoft YaHei, sans-serif" font-size="13" fill="#5f6368">A user-space lab turns the system concept into observable output.</text>
+</svg>

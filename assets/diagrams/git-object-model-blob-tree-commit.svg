@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">Git blob、tree、commit 对象模型</title>
+  <desc id="desc">commit 指向 tree，tree 指向 blob 或子 tree，父提交形成历史图。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#7c3aed"/></marker></defs>
+  <rect x="20" y="20" width="880" height="320" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="80" y="80" width="190" height="110" rx="14" fill="#ede9fe" stroke="#8b5cf6"/><text x="175" y="120" text-anchor="middle" font-size="20" font-family="Arial">commit</text><text x="175" y="150" text-anchor="middle" font-size="15" font-family="Arial">author / parent / tree</text>
+  <rect x="365" y="80" width="190" height="110" rx="14" fill="#dbeafe" stroke="#60a5fa"/><text x="460" y="120" text-anchor="middle" font-size="20" font-family="Arial">tree</text><text x="460" y="150" text-anchor="middle" font-size="15" font-family="Arial">path → object</text>
+  <rect x="650" y="60" width="190" height="80" rx="14" fill="#dcfce7" stroke="#22c55e"/><text x="745" y="106" text-anchor="middle" font-size="20" font-family="Arial">blob</text>
+  <rect x="650" y="175" width="190" height="80" rx="14" fill="#dcfce7" stroke="#22c55e"/><text x="745" y="222" text-anchor="middle" font-size="20" font-family="Arial">subtree</text>
+  <line x1="270" y1="135" x2="355" y2="135" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="555" y1="122" x2="640" y2="100" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)"/>
+  <line x1="555" y1="150" x2="640" y2="210" stroke="#7c3aed" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="460" y="300" text-anchor="middle" font-size="17" font-family="Arial" fill="#334155">cat-file 看对象类型；ls-tree 看目录快照；rev-parse 解析引用到对象 ID</text>
+</svg>

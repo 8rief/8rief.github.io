@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="250" viewBox="0 0 920 250" role="img" aria-label="segment tree lazy propagation diagram">
+<rect width="920" height="250" fill="#f8fafc"/>
+<defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 Z" fill="#334155"/></marker></defs>
+<rect x="35" y="35" width="190" height="70" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+<text x="130" y="69" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">节点区间 [l,r)</text>
+<text x="130" y="95" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">保存 sum</text>
+<rect x="365" y="35" width="190" height="70" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+<text x="460" y="69" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">lazy 标记</text>
+<text x="460" y="95" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">待下传增量</text>
+<rect x="200" y="150" width="170" height="65" rx="14" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+<text x="285" y="184" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">左子区间</text>
+<text x="285" y="210" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">需要时 push</text>
+<rect x="550" y="150" width="170" height="65" rx="14" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+<text x="635" y="184" text-anchor="middle" font-size="17" font-family="sans-serif" fill="#0f172a">右子区间</text>
+<text x="635" y="210" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#334155">需要时 push</text>
+</svg>

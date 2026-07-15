@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="860" height="200" viewBox="0 0 860 200" role="img" aria-labelledby="title desc">
+<title id="title">go-cli-flags-logging</title>
+<desc id="desc">Go teaching diagram for go-cli-flags-logging</desc>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#2f3a4a"/></marker></defs>
+<rect width="860" height="200" fill="#ffffff"/>
+<text x="430" y="28" text-anchor="middle" font-size="18" font-family="Arial, sans-serif" font-weight="700" fill="#152033">Go from zero: go-cli-flags-logging</text>
+<rect x="30" y="55" width="170" height="88" rx="14" fill="#e8f3ff" stroke="#2f3a4a" stroke-width="1.5"/>
+<text x="115" y="92" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" fill="#152033">os.Args</text><path d="M 200 99 L 228 99" stroke="#2f3a4a" stroke-width="2" marker-end="url(#arrow)"/><rect x="235" y="55" width="170" height="88" rx="14" fill="#f2f8e8" stroke="#2f3a4a" stroke-width="1.5"/>
+<text x="320" y="92" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" fill="#152033">flag sets per subcommand</text><path d="M 405 99 L 433 99" stroke="#2f3a4a" stroke-width="2" marker-end="url(#arrow)"/><rect x="440" y="55" width="170" height="88" rx="14" fill="#fff4e6" stroke="#2f3a4a" stroke-width="1.5"/>
+<text x="525" y="92" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" fill="#152033">checker/report/server packages</text><path d="M 610 99 L 638 99" stroke="#2f3a4a" stroke-width="2" marker-end="url(#arrow)"/><rect x="645" y="55" width="170" height="88" rx="14" fill="#f6ecff" stroke="#2f3a4a" stroke-width="1.5"/>
+<text x="730" y="92" text-anchor="middle" font-size="14" font-family="Arial, sans-serif" fill="#152033">slog summary fields</text>
+</svg>

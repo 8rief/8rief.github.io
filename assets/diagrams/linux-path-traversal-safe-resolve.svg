@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="430" viewBox="0 0 940 430" role="img" aria-labelledby="title desc">
+<title id="title">路径穿越与 canonical path 边界</title>
+<desc id="desc">路径穿越与 canonical path 边界 的结构示意图。</desc>
+<rect width="940" height="430" fill="#f8fafc"/>
+<text x="40" y="44" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">路径穿越与 canonical path 边界</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="200" y1="170.0" x2="250" y2="115.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="400" y1="115.0" x2="500" y2="115.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="200" y1="170.0" x2="250" y2="240.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="420" y1="240.0" x2="520" y2="240.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="50" y="135" width="150" height="70" rx="14" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="125.0" y="160.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">user name</text>
+<text x="125.0" y="182.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">relative path</text>
+<rect x="250" y="80" width="150" height="70" rx="14" fill="#fee2e2" stroke="#334155" stroke-width="1.5"/>
+<text x="325.0" y="105.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">unsafe join</text>
+<text x="325.0" y="127.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">read file</text>
+<rect x="250" y="205" width="170" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="335.0" y="230.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">safe resolve</text>
+<text x="335.0" y="252.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">canonical check</text>
+<rect x="500" y="80" width="160" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="580.0" y="105.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">outside file</text>
+<text x="580.0" y="127.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">lab-owned</text>
+<rect x="520" y="205" width="160" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="600.0" y="230.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">400 reject</text>
+<text x="600.0" y="252.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">stay in root</text>
+</svg>

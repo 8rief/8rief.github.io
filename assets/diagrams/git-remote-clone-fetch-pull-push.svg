@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">Git remote、clone、fetch、pull、push 模型</title>
+  <desc id="desc">本地 project 和 colleague clone 通过本地 bare remote 交换提交和引用。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 Z" fill="#2563eb"/></marker></defs>
+  <rect x="20" y="20" width="880" height="320" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+  <rect x="80" y="100" width="200" height="120" rx="16" fill="#dbeafe" stroke="#60a5fa"/><text x="180" y="142" text-anchor="middle" font-size="20" font-family="Arial">project</text><text x="180" y="174" text-anchor="middle" font-size="15" font-family="Arial">main / origin/main</text>
+  <rect x="360" y="80" width="200" height="160" rx="16" fill="#fef3c7" stroke="#f59e0b"/><text x="460" y="128" text-anchor="middle" font-size="20" font-family="Arial">remote.git</text><text x="460" y="160" text-anchor="middle" font-size="15" font-family="Arial">bare repository</text><text x="460" y="188" text-anchor="middle" font-size="15" font-family="Arial">shared refs</text>
+  <rect x="640" y="100" width="200" height="120" rx="16" fill="#dcfce7" stroke="#22c55e"/><text x="740" y="142" text-anchor="middle" font-size="20" font-family="Arial">colleague</text><text x="740" y="174" text-anchor="middle" font-size="15" font-family="Arial">clone</text>
+  <line x1="280" y1="145" x2="350" y2="130" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/><text x="315" y="120" text-anchor="middle" font-size="14" font-family="Arial">push</text>
+  <line x1="360" y1="190" x2="290" y2="190" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/><text x="325" y="215" text-anchor="middle" font-size="14" font-family="Arial">fetch/pull</text>
+  <line x1="560" y1="130" x2="630" y2="145" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/><text x="595" y="120" text-anchor="middle" font-size="14" font-family="Arial">clone</text>
+  <line x1="640" y1="190" x2="570" y2="190" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/><text x="605" y="215" text-anchor="middle" font-size="14" font-family="Arial">push</text>
+  <text x="460" y="300" text-anchor="middle" font-size="17" font-family="Arial" fill="#334155">fetch 更新远程跟踪分支；pull 在 fetch 后整合到当前分支</text>
+</svg>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>最小 Web 全栈任务面板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <p class="eyebrow">Minimal full-stack lab</p>
+      <h1>任务面板</h1>
+      <p>这个页面从浏览器发起 fetch 请求，Node.js 本地服务器处理 API，并把任务保存到 JSON 文件。</p>
+    </section>
+
+    <section class="panel" aria-labelledby="create-title">
+      <h2 id="create-title">新增任务</h2>
+      <form id="task-form">
+        <label for="task-title">任务标题</label>
+        <div class="row">
+          <input id="task-title" name="title" maxlength="80" required placeholder="例如：读完 fetch API 教程">
+          <button type="submit">保存</button>
+        </div>
+      </form>
+      <p id="status" class="status" role="status">正在加载...</p>
+    </section>
+
+    <section class="panel" aria-labelledby="list-title">
+      <h2 id="list-title">当前任务</h2>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </main>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

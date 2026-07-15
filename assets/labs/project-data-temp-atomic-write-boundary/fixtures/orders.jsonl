@@ -1,0 +1,4 @@
+{"order_id":"A100","status":"paid","amount_cents":1200}
+{"order_id":"A101","status":"pending","amount_cents":800}
+{"order_id":"A102","status":"paid","amount_cents":2500}
+{"order_id":"A103","status":"refunded","amount_cents":500}

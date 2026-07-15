@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="360" viewBox="0 0 920 360" role="img" aria-labelledby="title desc">
+  <title id="title">Git branch、ref 和 HEAD 模型</title>
+  <desc id="desc">分支引用指向提交，HEAD 指向当前分支，提交后当前分支向前移动。</desc>
+  <rect x="20" y="20" width="880" height="320" rx="20" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g font-family="Arial" font-size="16">
+    <circle cx="180" cy="180" r="26" fill="#dbeafe" stroke="#60a5fa"/><text x="180" y="186" text-anchor="middle">C1</text>
+    <circle cx="310" cy="180" r="26" fill="#dbeafe" stroke="#60a5fa"/><text x="310" y="186" text-anchor="middle">C2</text>
+    <circle cx="440" cy="120" r="26" fill="#dcfce7" stroke="#22c55e"/><text x="440" y="126" text-anchor="middle">F1</text>
+    <circle cx="570" cy="180" r="26" fill="#fef3c7" stroke="#f59e0b"/><text x="570" y="186" text-anchor="middle">M</text>
+    <line x1="206" y1="180" x2="284" y2="180" stroke="#334155" stroke-width="3"/>
+    <line x1="334" y1="170" x2="416" y2="130" stroke="#334155" stroke-width="3"/>
+    <line x1="466" y1="132" x2="546" y2="170" stroke="#334155" stroke-width="3"/>
+    <line x1="336" y1="180" x2="544" y2="180" stroke="#334155" stroke-width="3"/>
+    <rect x="610" y="145" width="140" height="34" rx="8" fill="#fee2e2" stroke="#ef4444"/><text x="680" y="168" text-anchor="middle">HEAD → main</text>
+    <rect x="390" y="55" width="170" height="34" rx="8" fill="#ecfeff" stroke="#06b6d4"/><text x="475" y="78" text-anchor="middle">feature/summary</text>
+  </g>
+  <text x="460" y="295" text-anchor="middle" font-size="17" font-family="Arial" fill="#334155">引用是名字到提交 ID 的映射；log --graph 同时展示历史和引用</text>
+</svg>

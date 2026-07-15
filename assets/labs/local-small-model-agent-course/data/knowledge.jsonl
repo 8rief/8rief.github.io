@@ -1,0 +1,9 @@
+{"id":"nvidia-driver","title":"nvidia-smi 只证明驱动可见","text":"nvidia-smi 能显示 GPU 和 driver 时，只证明 WSL 能通过驱动看到设备。它不证明 nvcc 已安装，也不证明 PyTorch CUDA runtime 可用。"}
+{"id":"cuda-compiler","title":"nvcc 是 CUDA C++ 编译器边界","text":"nvcc 负责编译 CUDA C++ 源文件。安装了带 CUDA runtime 的 PyTorch wheel，不等于本机已经有完整 nvcc toolchain。"}
+{"id":"vector-add-proof","title":"vector_add_ok 是正确性证据","text":"vector_add_ok 说明 host 分配、H2D 复制、kernel launch、同步、D2H 复制和 CPU 校验构成了正确性闭环。它不是 GPU 比 CPU 快的性能证据。"}
+{"id":"lora-boundary","title":"LoRA 冻结基座并训练低秩增量","text":"LoRA 保持基座模型权重冻结，只训练低秩适配器矩阵。它减少可训练参数、梯度和优化器状态，但训练 loss 下降不能单独证明领域能力达标。"}
+{"id":"rag-boundary","title":"RAG 负责可更新且可追溯的事实","text":"RAG 在回答前检索外部知识并把证据放入上下文。当事实频繁更新或必须给出来源时，更新索引通常比重新训练模型更直接。"}
+{"id":"tool-boundary","title":"模型输出的工具调用是不可信输入","text":"Agent 不能把模型生成的工具名和参数直接执行。执行器必须先检查工具白名单、必需参数、类型、长度、多余字段和作用域。"}
+{"id":"agent-memory","title":"Agent 状态和记忆要分层","text":"当前任务目标、最近几轮对话属于会话状态；稳定偏好和长期事实才适合持久化。无界保留全部历史会增加上下文长度、延迟和隐私风险。"}
+{"id":"held-out-eval","title":"优化 Agent 要使用冻结的 held-out 评测","text":"评测集应在优化前冻结，并把失败区分为 retrieval_miss、wrong_tool、bad_arguments、unsupported_claim 和 state_error。只看平均 loss 或单次演示无法定位应该改检索、工具、prompt、数据还是模型。"}
+{"id":"hardware-scope","title":"RTX 5070 是验证平台而不是知识边界","text":"12GB RTX 5070 适合验证 0.6B 到 1.7B LoRA 和受控的 4B QLoRA 实验。迁移到其他硬件时应根据显存调整模型、sequence length、batch 和量化方式，但任务定义、评测和证据边界不变。"}

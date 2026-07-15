@@ -1,0 +1,4 @@
+{
+  "currency": "CNY",
+  "include_statuses": ["paid", "pending"]
+}

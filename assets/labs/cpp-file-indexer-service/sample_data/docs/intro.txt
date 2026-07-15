@@ -1,0 +1,2 @@
+C++ projects need explicit build boundaries.
+Tests and reports make small tools auditable.

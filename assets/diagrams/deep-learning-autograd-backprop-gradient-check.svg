@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<title id="title">Autograd 计算图和梯度检查</title>
+<desc id="desc">Autograd 计算图和梯度检查 的结构示意图。</desc>
+<rect width="920" height="420" fill="#f8fafc"/>
+<text x="40" y="42" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">Autograd 计算图和梯度检查</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="200" y1="175.0" x2="240" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="360" y1="175.0" x2="410" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="540" y1="175.0" x2="600" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="560" y1="305.0" x2="410" y2="175.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="60" y="140" width="140" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="130.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">forward</text>
+<text x="130.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">prediction</text>
+<rect x="240" y="140" width="120" height="70" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="300.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">loss</text>
+<text x="300.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">scalar</text>
+<rect x="410" y="140" width="130" height="70" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="475.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">backward</text>
+<text x="475.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">grad</text>
+<rect x="600" y="140" width="130" height="70" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="665.0" y="165.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">optimizer</text>
+<text x="665.0" y="187.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">step</text>
+<rect x="410" y="270" width="150" height="70" rx="14" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="485.0" y="295.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">finite diff</text>
+<text x="485.0" y="317.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">check</text>
+</svg>

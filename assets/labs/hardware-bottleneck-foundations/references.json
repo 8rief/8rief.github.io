@@ -1,0 +1,37 @@
+[
+  {
+    "title": "NVIDIA CUDA on WSL User Guide",
+    "url": "https://docs.nvidia.com/cuda/wsl-user-guide/index.html",
+    "why": "WSL-specific driver/toolkit boundary: use the Windows NVIDIA driver mapping and install only the Linux CUDA toolkit inside WSL."
+  },
+  {
+    "title": "Ubuntu: Enable GPU acceleration for Ubuntu on WSL with the NVIDIA CUDA Platform",
+    "url": "https://ubuntu.com/wsl/docs/stable/howto/gpu-cuda/",
+    "why": "Ubuntu WSL installation guide that warns not to install the Linux display driver and shows WSL-specific toolkit package installation."
+  },
+  {
+    "title": "NVIDIA CUDA Installation Guide for Linux",
+    "url": "https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html",
+    "why": "Runfile installer options such as --toolkit and --toolkitpath for user-writable toolkit-only installation."
+  },
+  {
+    "title": "NVIDIA CUDA C++ Best Practices Guide",
+    "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html",
+    "why": "CUDA performance metrics, timing, bandwidth, host/device transfer, pinned memory, and memory optimization guidance."
+  },
+  {
+    "title": "NVIDIA CUDA Runtime API: Event Management",
+    "url": "https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__EVENT.html",
+    "why": "Official cudaEventElapsedTime timing API details and caveats."
+  },
+  {
+    "title": "NVIDIA CUDA Runtime API: Memory Management",
+    "url": "https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__MEMORY.html",
+    "why": "Official cudaMemcpy/cudaMemcpyAsync memory-transfer API reference."
+  },
+  {
+    "title": "Intel 64 and IA-32 Architectures Optimization Reference Manual",
+    "url": "https://cdrdv2-public.intel.com/814198/248966-Optimization-Reference-Manual-V1-049.pdf",
+    "why": "Vendor optimization manual for CPU cache, memory hierarchy, branch prediction, and microarchitecture-aware tuning."
+  }
+]

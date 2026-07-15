@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="420" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+<title id="title">XOR baseline 到 MLP 对比</title>
+<desc id="desc">XOR baseline 到 MLP 对比 的结构示意图。</desc>
+<rect width="920" height="420" fill="#f8fafc"/>
+<text x="40" y="42" font-size="24" font-family="Arial, sans-serif" fill="#0f172a">XOR baseline 到 MLP 对比</text>
+<defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#475569"/></marker></defs>
+<line x1="210" y1="155.0" x2="260" y2="120.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="210" y1="155.0" x2="260" y2="210.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="210" y1="155.0" x2="260" y2="300.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="400" y1="120.0" x2="520" y2="220.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="400" y1="210.0" x2="520" y2="220.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<line x1="400" y1="300.0" x2="520" y2="220.0" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="60" y="120" width="150" height="70" rx="14" fill="#dbeafe" stroke="#334155" stroke-width="1.5"/>
+<text x="135.0" y="145.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">XOR data</text>
+<text x="135.0" y="167.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">fixed split</text>
+<rect x="260" y="90" width="140" height="60" rx="14" fill="#e2e8f0" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="110.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">majority</text>
+<text x="330.0" y="132.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">57.3%</text>
+<rect x="260" y="180" width="140" height="60" rx="14" fill="#dcfce7" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="200.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">linear</text>
+<text x="330.0" y="222.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">49.0%</text>
+<rect x="260" y="270" width="140" height="60" rx="14" fill="#ede9fe" stroke="#334155" stroke-width="1.5"/>
+<text x="330.0" y="290.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">MLP</text>
+<text x="330.0" y="312.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">99.0%</text>
+<rect x="520" y="180" width="190" height="80" rx="14" fill="#ffedd5" stroke="#334155" stroke-width="1.5"/>
+<text x="615.0" y="210.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">comparison</text>
+<text x="615.0" y="232.0" text-anchor="middle" font-size="16" font-family="Arial, sans-serif" fill="#0f172a">claim boundary</text>
+</svg>

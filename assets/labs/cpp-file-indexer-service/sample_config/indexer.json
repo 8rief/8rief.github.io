@@ -1,0 +1,4 @@
+{
+  "root": "sample_data/docs",
+  "extensions": [".txt", ".md"]
+}

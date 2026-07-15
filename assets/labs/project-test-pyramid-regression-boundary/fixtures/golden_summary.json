@@ -1,0 +1,10 @@
+{
+  "gross_cents": 15600,
+  "line_count": 4,
+  "net_cents": 14265,
+  "order_count": 3,
+  "rejected_lines": 0,
+  "top_customer": "bob",
+  "top_customer_net_cents": 7225,
+  "total_discount_cents": 1335
+}

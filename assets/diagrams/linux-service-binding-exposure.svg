@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430" role="img" aria-labelledby="title desc">
+  <title id="title">Linux service binding exposure boundary</title>
+  <desc id="desc">Binding to 127.0.0.1 accepts only loopback connections; binding to 0.0.0.0 accepts connections on all IPv4 interfaces including host address.</desc>
+  <defs><style>text{font-family:Arial,'Microsoft YaHei',sans-serif;fill:#172033}.safe{fill:#edf8f0;stroke:#2f855a;stroke-width:2;rx:16}.wide{fill:#fff8e8;stroke:#b7791f;stroke-width:2;rx:16}.client{fill:#f6f8fb;stroke:#315c9f;stroke-width:2;rx:16}.bad{stroke:#d93025;stroke-width:3;stroke-dasharray:8 6;fill:none}.arrow{stroke:#44546a;stroke-width:2.5;marker-end:url(#arrow);fill:none}.title{font-size:22px;font-weight:700}.small{font-size:17px}</style><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 z" fill="#44546a"/></marker></defs>
+  <text x="490" y="40" text-anchor="middle" class="title">服务绑定地址决定暴露边界</text>
+  <rect x="80" y="95" width="220" height="105" class="safe"/><text x="190" y="132" text-anchor="middle" class="title">127.0.0.1:18182</text><text x="190" y="163" text-anchor="middle" class="small">只听 loopback</text><text x="190" y="190" text-anchor="middle" class="small">host IP 连接失败</text>
+  <rect x="680" y="95" width="220" height="105" class="wide"/><text x="790" y="132" text-anchor="middle" class="title">0.0.0.0:18182</text><text x="790" y="163" text-anchor="middle" class="small">监听全部 IPv4</text><text x="790" y="190" text-anchor="middle" class="small">host IP 可连接</text>
+  <rect x="370" y="260" width="240" height="90" class="client"/><text x="490" y="298" text-anchor="middle" class="title">本机客户端</text><text x="490" y="328" text-anchor="middle" class="small">curl 127.0.0.1 / curl host-ip</text>
+  <path d="M420 260 C350 220 280 185 300 150" class="arrow"/><path d="M560 260 C635 220 700 185 680 150" class="arrow"/>
+  <path d="M330 165 C440 115 555 115 650 165" class="bad"/><text x="490" y="120" text-anchor="middle" class="small">loopback-only 不接受 host IP</text>
+  <text x="490" y="395" text-anchor="middle" class="small">防御直觉：开发/调试优先绑定 127.0.0.1；确需对外服务时再绑定所有接口并加访问控制。</text>
+</svg>

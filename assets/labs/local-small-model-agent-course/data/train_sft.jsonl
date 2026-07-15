@@ -1,0 +1,8 @@
+{"id":"train-001","instruction":"nvidia-smi 可见能证明哪些事？","output":"它证明 WSL 能通过 driver 看到 GPU；不证明 nvcc 已安装，也不证明 PyTorch CUDA runtime 可用。"}
+{"id":"train-002","instruction":"vector_add_ok 为什么不是性能证据？","output":"它只校验 host/device 分配、复制、kernel、同步和结果正确。要讨论性能，还要固定输入、warmup、同步、计时边界和 CPU baseline。"}
+{"id":"train-003","instruction":"LoRA 减少了什么？","output":"LoRA 冻结基座权重，只训练低秩适配器，因此减少可训练参数、梯度和优化器状态。"}
+{"id":"train-004","instruction":"什么情况优先使用 RAG？","output":"知识会更新、回答必须附来源或者需要删改单条事实时，优先 RAG，因为更新索引比重训模型直接。"}
+{"id":"train-005","instruction":"Agent 为什么需要工具 schema？","output":"模型输出是不可信输入。schema 用于限定工具白名单、参数名、类型、长度和额外字段，验证通过后才能执行。"}
+{"id":"train-006","instruction":"如何区分 Agent 状态和长期记忆？","output":"当前目标和最近对话是会话状态；经过确认的稳定偏好或事实才进入持久记忆。"}
+{"id":"train-007","instruction":"Agent 失败后应该怎么分析？","output":"先把失败归类为检索未命中、工具选错、参数非法、无证据断言或状态错误，再只修复主要失败层并重跑冻结评测集。"}
+{"id":"train-008","instruction":"RTX 5070 对这条路线的意义是什么？","output":"RTX 5070 12GB 是实测平台，适合小模型 LoRA；知识边界不限于它。换硬件时调整模型、长度、batch 和量化，保留同一任务和评测。"}
